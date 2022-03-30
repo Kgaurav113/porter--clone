@@ -22,11 +22,26 @@
 </head>
 
 <body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <img src="./images/navbar full.png" alt="">
+    </div>
+    <div class="nav-2">
+        <div>
+            <div onclick="window.location.href='./index.html'">CITY TEMPO</div>
+            <div onclick="window.location.href='./packers.html'">PACKERS & MOVERS</div>
+            <div onclick="window.location.href='./driver.html'">DRIVER PARTNERS</div>
+            <div onclick="window.location.href='./enterprise.html'">FOR ENTERPRISE</div>
+        </div>
+        <div>
+            <p>Support</P>
+            <p class="track-btn">Track Order</p>
+        </div>
+    </div>
+
+    <!-- BODY -->
     <div class="all">
         <div class="header">
-
-            <div class="navbar">
-            </div>
             <!-- Slide-Show -->
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1500">
                 <div class="carousel-inner">
@@ -58,7 +73,6 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-
         </div>
 
         <div class="body">
@@ -138,11 +152,11 @@
                 </div>
             </div>
 
-
             <div class="offers">
                 <h3>WHAT WE OFFER</h3>
                 <div class="hr"></div>
             </div>
+
             <div class="offers-poster">
                 <img src="/images/offers.png" alt="">
             </div>
@@ -151,44 +165,232 @@
             <div class="porters">
                 <h3>PORTERS FOR YOU</h3>
                 <div class="hr"></div>
-                <div class="poster-images">
-                    <div>
-                        <img src="./images/truck-1.png" alt="">
+                <div class="tab">
+                    <div class="tablinks" onclick="openCity(event,'wheeler-3')"> <img src="/images/truck-1.png" alt="">
                         <p>3 WHEELER (HELPER)</p>
                     </div>
-                    <div>
-                        <img src="./images/truck-4.png" alt="">
+
+                    <div class="tablinks" onclick="openCity(event, 'wheeler-2')"><img src="/images/truck-4.png" alt="">
                         <p>2 WHEELER</p>
                     </div>
-                    <div>
-                        <img src="./images/truck-3.png" alt="">
+
+                    <div class="tablinks" onclick="openCity(event, 'ace')"> <img src="/images/truck-3.png" alt="">
                         <p>ACE (HELPER)</p>
                     </div>
-                    <div>
-                        <img src="./images/truck-2.png" alt="">
+
+
+                    <div class="tablinks" onclick="openCity(event, 'ace-1ton')"><img src="/images/truck-2.png" alt="">
                         <p>8FT 1TON</p>
                     </div>
-                    <div>
-                        <img src="./images/truck-5.png" alt="">
+
+                    <div class="tablinks" onclick="openCity(event, 'wheeler-3')"> <img src="/images/truck-5.png" alt="">
                         <p>3 WHEELER</p>
                     </div>
-                    <div>
-                        <img src="./images/truck-1.png" alt="">
+
+
+                    <div class="tablinks" onclick="openCity(event, 'ft-pickup')"><img src="/images/truck-1.png" alt="">
                         <p>8FT PICKUP</p>
                     </div>
-                    <div>
-                        <img src="./images/truck-1.png" alt="">
+
+
+                    <div class="tablinks" onclick="openCity(event, 'tata407')"> <img src="/images/truck-1.png" alt="">
                         <p>TATA 407</p>
                     </div>
-                    <div>
-                        <img src="./images/truck-2.png" alt="">
-                        <p>TATA ACE</p>
-                    </div>
-                    <div>
-                        <img src="./images/truck-5.png" alt="">
+
+                    <div class="tablinks" onclick="openCity(event, 'ace-helper')"><img src="/images/truck-5.png" alt="">
                         <p>ACE (HELPER + 1 LABOUR)</p>
                     </div>
+
+
                 </div>
+
+                <div id="wheeler-3" class="tabcontent">
+                    <div class="wheeler-3">
+                        <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/3_wheeler_helper-51343864a9a26168e4bfc00ad299c33515cc01b793fc8b797c380aa46abf19c3.png"
+                            alt="">
+                        <div>
+                            <h3>RENT 3 WHEELER(HELPER)</h3>
+                            <div class="fare">Fares starting from Rs.160</div>
+                            <p>Base fare includes 1.0 km distance and 55 minutes of time
+                                Pricing may vary based on your locality.
+                                Road tax, parking etc as applicable over and above ride fare.</p>
+                            <button class="know-more">KNOW MORE ></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="wheeler-2" class="tabcontent">
+                    <div class="wheeler-3">
+                        <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/2_wheeler-947e3c6aac74dcdd11fdd4059e4ee72132b276200dff063d6dff2c445f7aab5b.png"
+                            alt="">
+                        <div>
+                            <h3>RENT 2 WHEELER</h3>
+                            <div class="fare">Fares starting from Rs.40</div>
+                            <p>Base fare includes 1.0 km distance and 55 minutes of time
+                                Pricing may vary based on your locality.
+                                Road tax, parking etc as applicable over and above ride fare.</p>
+                            <button class="know-more">KNOW MORE ></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ace" class="tabcontent">
+                    <div class="wheeler-3">
+                        <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/tata_ace_closed-e92a36b3508e6e3b1804fd2015adbfb6c948bc35afab36699440785ed83b5b24.png"
+                            alt="">
+                        <div>
+                            <h3>RENT ACE (HELPER)</h3>
+                            <div class="fare">Fares starting from Rs.210</div>
+                            <p>Base fare includes 1.0 km distance and 55 minutes of time
+                                Pricing may vary based on your locality.
+                                Road tax, parking etc as applicable over and above ride fare.</p>
+                            <button class="know-more">KNOW MORE ></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ace-1ton" class="tabcontent">
+                    <div class="wheeler-3">
+                        <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/8ft_1ton-a9abd7ed5e7104c62305c68c97527eac0ff7d40dd7808175d097546b57f901d7.png"
+                            alt="">
+                        <div>
+                            <h3>RENT 8FT 1TON</h3>
+                            <div class="fare">Fares starting from Rs.300</div>
+                            <p>Base fare includes 1.0 km distance and 55 minutes of time
+                                Pricing may vary based on your locality.
+                                Road tax, parking etc as applicable over and above ride fare.</p>
+                            <button class="know-more">KNOW MORE ></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ft-pickup" class="tabcontent">
+                    <div class="wheeler-3">
+                        <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/tata_ace_closed-e92a36b3508e6e3b1804fd2015adbfb6c948bc35afab36699440785ed83b5b24.png"
+                            alt="">
+                        <div>
+                            <h3>
+                                RENT 8FT PICKUP</h3>
+                            <div class="fare">Fares starting from Rs.325</div>
+                            <p>Base fare includes 1.0 km distance and 55 minutes of time
+                                Pricing may vary based on your locality.
+                                Road tax, parking etc as applicable over and above ride fare.</p>
+                            <button class="know-more">KNOW MORE ></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="tata407" class="tabcontent">
+                    <div class="wheeler-3">
+                        <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/tata_407-b968c07406c8b63fca431ef8ea2152caf5272b0013502a73d2390289f1138505.png"
+                            alt="">
+                        <div>
+                            <h3>RENT TATA 407</h3>
+                            <div class="fare">Fares starting from Rs.625</div>
+                            <p>Base fare includes 1.0 km distance and 55 minutes of time
+                                Pricing may vary based on your locality.
+                                Road tax, parking etc as applicable over and above ride fare.</p>
+                            <button class="know-more">KNOW MORE ></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ace-helper" class="tabcontent">
+                    <div class="wheeler-3">
+                        <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/3_wheeler_helper-51343864a9a26168e4bfc00ad299c33515cc01b793fc8b797c380aa46abf19c3.png"
+                            alt="">
+                        <div>
+                            <h3>RENT ACE (HELPER)</h3>
+                            <div class="fare">Fares starting from Rs.160</div>
+                            <p>Base fare includes 1.0 km distance and 55 minutes of time
+                                Pricing may vary based on your locality.
+                                Road tax, parking etc as applicable over and above ride fare.</p>
+                            <button class="know-more">KNOW MORE ></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- </div> -->
+            </div>
+            
+            <div id="transforming_cities">
+                <div id="transforming_header">
+                  <div id="transforming_header_text">
+                      WE ARE TRANSFORMING CITIES
+                      <div class="hr"></div>
+                    </div>
+             </div>
+            
+            <div id="header_text">
+                <p>We are present right where you need us and take care of all your logistics requirements. Our cost-effective solutions
+                make us the right partner for your business, enterprise or for your household goods movement anywhere in India.</p>
+            </div>
+
+              <div id="transforming_images">
+                  <div>
+                   <div id="mumbai"><img src="/images/mumbai.png" alt=""></div>
+                      <p>Mumbai</p>
+                  </div>
+                <div>
+                 <div id="delhi"><img src="/images/delhi.png" alt=""></div>
+                    <p>Delhi NCR</p>
+                </div>
+                <div>
+                  <div id="banglore"><img src="/images/banglore.png" alt=""></div>
+                    <p>Banglore</p>
+                </div>
+                <div>
+                    <div id="hydrabad"><img src="/images/hydrabad.png" alt=""></div>
+                    <p>Hydrabad</p>
+                </div>
+                <div>
+                 <div id="chennai"><img src="/images/chennai.png" alt=""></div>
+                    <P>Chennai</P>
+                </div>
+                <div>
+                 <div id="ahmedabad"><img src="/images/ahmedabad.png" alt=""></div>
+                    <p>Ahmedabad</p>
+                </div>
+                <div>
+                   <div id="jaipur"><img src="/images/jaipur.png" alt=""></div>
+                    <p>Jaipur</p>
+                </div>
+                <div>
+                <div id="pune"><img src="/images/pune.png" alt=""></div>
+                    <p>Pune</p>
+                </div>
+                <div>
+                   <div id="kolkata"><img src="/images/kolkata.png" alt=""></div>
+                    <P>Kolkata</P>
+                </div>
+                <div>
+                 <div id="surat"><img src="/images/surat.png" alt=""></div>
+                 <p>Surat</p>
+                </div>
+                <div>
+                 <div id="lucknow"><img src="/images/lucknow.png" alt=""></div>
+                    <P>Lucknow</P>
+                </div>
+                <div>
+               <div id="coimbtore"><img src="/images/coimbtore.png" alt=""></div>
+               <p>Coimbtore</p>
+                </div>
+                <div>
+                    <div id="indore"><img src="/images/indore.png" alt=""></div>
+                    <p>Indore</p>
+                </div>
+                <div>
+                <div id="nagpur"><img src="/images/nagpur.png" alt=""></div>
+                    <p>Nagpur</p>
+                </div>
+                <div>
+                <div id="chandigarh"><img src="/images/chandigarh.png" alt=""></div>
+                    <p>Chandigarh</p>
+                </div>
+              </div>
+            
             </div>
 
             <div class="adds">
@@ -199,7 +401,7 @@
                     <p>Porter offers the most efficient Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                         Aspernatur quisquam ad ipsam reiciendis omnis minima, distinctio officia labore consectetur iste
                         eligendi? Itaque velit minus quidem quis, accusamus cumque and option of improved SLA.</p>
-                    <button>KNOW MORE ></button>
+                    <button class="know-more">KNOW MORE ></button>
                 </div>
                 <div class="our-info">
                     <h4>We are growing big each passing day!</h4>
@@ -231,6 +433,7 @@
                     <img src="/images/people.png" alt="">
                 </div>
             </div>
+
             <div class="people">
                 <h3>AS FEATURED ON</h3>
                 <div class="hr"></div>
@@ -238,7 +441,6 @@
                     <img src="/images/news.png" alt="">
                 </div>
             </div>
-
 
             <div class="accorbody">
                 <h3>FREQUENTLY ASKED QUESTIONS</h3>
@@ -249,7 +451,7 @@
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseOne">
-                                What is porter app?
+                                How to attach Tata ace or any goods vehicle in Porter?
                             </button>
                         </h2>
                         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
@@ -268,7 +470,7 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapseTwo">
-                                How do I use Porter App?
+                                How to attach two wheeler in Porter?
                             </button>
                         </h2>
                         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
@@ -288,7 +490,7 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapseThree">
-                                How do I book a tempo/mini truck or bike online from porter?
+                                Can I attach my tata ace on a monthly contract or rent mini trucks on monthly basis?
                             </button>
                         </h2>
                         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
@@ -311,7 +513,7 @@
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapseThree">
-                                Does porter provide intercity or interstate service?
+                                What documents and permits do I need to on-board Porter?
                             </button>
                         </h2>
                         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
@@ -430,6 +632,8 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="faqs">
                 <div class="img">
                     <img src="/images/FAQ.png" alt="">
@@ -440,13 +644,32 @@
                 </div>
             </div>
 
+     <div class="screen-div">
+            <div class="track-order">
+                <div class="track-head">
+                    <h3>Track Order</h3>
+                    <img  class="close" src="./images/close-line.png" alt="" >
+                </div>
+                <div class="inputs">
+                    <input type="text" placeholder="CRN">
+                    <input type="text" placeholder="+91-">
+                    <button>TRACK ORDER</button>
+                </div>
+                <div class="track-foot">
+                    <p>For Packers & Movers related query, br
+                       <br> call us at <a>022 4410 4444</a></p>
+                    <img src="./images/accept-call.png" alt="" class="caller-icon">
+                </div>
+            </div>
+        </div>
+
 
         </div>
 
 
         <!-- Footer -->
         <div class="footer">
-
+            <!-- imported -->
             <div class="knowus" style="color: white;">
                 <div id="know">
                     <h3 id="porter">PORTER</h3>
@@ -548,11 +771,125 @@
                         CIN: U74999MH2014PTC306120</p>
                 </div>
             </div>
-
         </div>
     </div>
 
 </body>
 
+<script>
+
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+
+    var tracker = document.querySelector(".screen-div")
+    tracker.style.display = "none"
+
+    document.querySelector(".track-btn").addEventListener("click", function () {
+        console.log("click")
+        tracker.style.display = "block"
+    })
+
+    document.querySelector(".close").addEventListener("click", function () {
+        console.log("close")
+        tracker.style.display = "none"
+    })
+
+
+    /* CITIES */
+
+    document.getElementById("mumbai").addEventListener("click",()=>{
+
+window.location.href="https://porter.in/"
+
+})
+document.getElementById("delhi").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("banglore").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("hydrabad").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("chennai").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("ahmedabad").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("jaipur").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("pune").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("kolkata").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("surat").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("lucknow").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("coimbtore").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("indore").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("nagpur").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+document.getElementById("chandigarh").addEventListener("click",()=>{
+
+window.location.href=""
+
+})
+
+
+var cityarr = JSON.parse(localStorage.getItem("city")) || []
+    console.log("cityarr",cityarr)
+
+    
+</script>
+
 </html>
-<script src="/index.js"></script>

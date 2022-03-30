@@ -9,7 +9,7 @@ body{
     font-family: 'Titillium Web', sans-serif;
 }
 .all{
-    width: 97vw;
+    width: 96vw;
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -25,10 +25,39 @@ body{
     flex-direction: column;
 }
 .navbar{
+    width: 99vw;
+    height: fit-content;
+    margin: auto;
+}
+.navbar img{
     width: 100%;
     height: fit-content;
 }
+.nav-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 99vw;
+    padding: 5px 0px;
+    margin: auto;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.nav-2 > div{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    justify-content: space-around;
+}
+.nav-2 > div > div , .nav-2 > div > p{
+    margin: 0px 15px;
+}
 
+.nav-2 > div > div:hover , .nav-2 > div > p:hover{
+    font-weight: 700;
+    border-bottom: 2px solid blue;
+    color: blue;
+}
 
                            /* BODY */
 
@@ -177,6 +206,106 @@ body{
     }
 
 
+    /* TABS */
+
+        /* Porters services */
+
+.porters{
+    width: 98%;
+    height: fit-content;
+    overflow: hidden;
+    margin: 50px 30px;
+}
+    .porters h3{
+        font-weight: 700;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+
+    body{
+        font-family: Arial;
+    }
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 99%;
+  text-align: center;
+}
+    
+.tab::-webkit-scrollbar {
+    display: none;
+  }
+.tab img{
+   width: auto;
+   height: 200px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 36px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: rgb(240,244,255);
+  width: 99%;
+}
+
+
+.wheeler-3{
+    display: flex;
+    /* justify-content: space-around; */
+}
+.wheeler-3 img{
+    width: 50%;
+    height: fit-content;
+}
+.wheeler-3 > div{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 50%;
+    height: fit-content;
+}
+.tabcontent h3 , .tabcontent p, .tabcontent button{
+    margin: 20px 0px;
+}
+.fare{
+    font-size: 20px;
+    background: white;
+    padding: 20px 30px;   
+    border: 1px solid black; 
+    width: fit-content;
+}
+
 
     /* OFFER POSTER */
 
@@ -202,34 +331,6 @@ body{
 
 
 
-    /* Porters services */
-
-.porters{
-    width: 100%;
-    height: fit-content;
-    margin: 50px 30px;
-}
-    .porters h3{
-        font-weight: 700;
-        font-size: 24px;
-        font-weight: 700;
-    }
-
-    .poster-images{
-        display: flex;
-        width: 90%;
-        margin: auto;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        text-align: center;
-        font-weight: 700;
-        color: blue;
-    }
-    
-    .poster-images::-webkit-scrollbar {
-        display: none;
-      }
-    
 
 
 
@@ -263,7 +364,7 @@ body{
       .add p {
           margin: 30px 0px;
       }
-      .add button{
+      .know-more{
           color: white;
           font-weight: 700;
           background: #8E2DE2;  /* fallback for old browsers */
@@ -273,6 +374,8 @@ body{
           padding: 8px 10px;
           border: none;
           border-radius: 10px;
+          width: fit-content;
+          height: fit-content;
                 }
 
                 
@@ -342,26 +445,24 @@ body{
         font-size: 24px;
         margin-left: 30px;
     }
-    .accorbody .hr{
-        margin-left: 30px;
+    .accordion{
+        width: 60%;
+        margin: auto;
+        margin: 10px auto 25px auto;
     }
-  .accordion{
-      width: 60%;
-      margin: auto;
-      margin: 10px auto 25px auto;
-  }
   .hr{
       width: 30px;
       height: 5px;
       background: #4568DC;  /* fallback for old browsers */
       background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */
       background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            border-radius: 10px;
+      border-radius: 10px;
             margin: 15px 0px;
-  }
-
-
-
+            margin-left: 30px;
+        }
+        
+        
+        
 /* FAQs */
 
 .faqs{
@@ -499,4 +600,155 @@ body{
 }
 .text{
     color: white;
+}
+
+
+
+/* TRACKER */
+.screen-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    width: 100vw;
+    height:90vh;
+}
+.track-order{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    height: 400px;
+    margin: auto;
+    margin-top: 200px;
+}
+.track-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+    align-items: center;
+    border-bottom: 1px solid rgb(196,196,196);
+    margin-top: 10px;
+}
+
+.track-head img, .caller-icon{
+    width: 20px;
+    height: 20px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+.inputs input{
+    width: 80%;
+    padding: 10px 15px;
+    margin: 20px auto;
+}
+.inputs button{
+    background-color: rgb(41,98,255);
+    color: white;
+    font-weight: 700;
+    border: none;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+
+.track-foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-top:  1px solid rgb(196,196,196);
+    padding: 15px 0px;
+}
+
+
+
+/* CITIES */
+#transforming_cities{
+   margin-left: 40px;
+   display: flex;
+   flex-direction: column;
+   height: fit-content;
+   margin: 20px 0px;
+   padding: 50px 0px 50px 50px;
+}
+#transforming_design{
+       background-color:rgb(63, 62, 242) ;
+    width: 30px;
+    height: 4px;
+    border-radius: 8px;
+        /* margin-left: 40px; */
+       
+}
+
+#transforming_images{
+    display: grid;
+    grid-template-columns: repeat(8,150px);
+    row-gap: 50px;
+       height: auto;
+       width: 80%;
+       align-self: left;
+
+}
+#transforming_images div{
+    width: 75%;
+    height: 100px;
+  text-align: center;
+
+}
+#transforming_images img{
+    width: 85%;
+    height: 85%;
+    filter: grayscale(1);
+}
+#transforming_images img:hover{
+    /* width: 90%; */
+    filter: grayscale(0);
+}
+#header_text{
+    font-size: 21px;
+    padding-top: 30px;
+    color: rgb(97, 95, 95);
+    font-family: 'Titillium Web', sans-serif;
+       font-weight: 10;
+       margin-left: 25px;
+}
+#transforming_images div p{
+    /* margin: 0; */
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    /* border: 1px solid black; */
+ 
+   margin-top: 10px;
+   margin-bottom: 10px;
+   color: gray;
+   font-weight: 600px;
+  
+}
+#transforming_images div {
+    padding-top: 10px;
+     padding-bottom: 10px;
+     justify-content: center;
+     margin: auto;
+     cursor: pointer;
+}
+#transforming_images div div{
+
+    border: 0.5px solid gray;
+    border-radius: 20px;
+}
+#transforming_images div div:hover{
+   border-color: blue;
+}
+#transforming_header_text {
+       font-family: 'Titillium Web', sans-serif;
+       font-size: 20px;
+           font-weight: 700;
+    color: #212121;
+    padding-bottom: 20px;
 }

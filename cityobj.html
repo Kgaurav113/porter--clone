@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/976e422f89.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/976e422f89.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="navbar">
+        <img src="./images/navbar full.png" alt="">
+    </div>
+    <div class="nav-2">
+        <div>
+            <div onclick="window.location.href='./index.html'">CITY TEMPO</div>
+            <div onclick="window.location.href='./packers.html'">PACKERS & MOVERS</div>
+            <div onclick="window.location.href='./driver.html'">DRIVER PARTNERS</div>
+            <div onclick="window.location.href='./enterprise.html'">FOR ENTERPRISE</div>
+        </div>
+        <div>
+            <p>Support</P>
+            <p class="track-btn">Track Order</p>
+        </div>
+    </div>
+    <div class="all">
+
+        <div class="city-info">
+            <div class="left">
+            <div class="city-img"></div>
+            <div class="desc-city"></div>
+        </div>
+        <div class="right">
+            <form>
+                <input type="text" placeholder="City">
+                <input type="number" placeholder="+91-">
+                <input type="text" placeholder="Pickup Location">
+                <input type="text" placeholder="Drop Location">
+                <input type="text" placeholder="Email Address">
+                <div class="reqir">
+                <p>Choose Your Requirements</p>
+                <button> PERSONAL</button>
+                <button> BUSINESS</button>
+            </div>
+            <button>GET ESTIMATED</button>
+               </form>
+               <div class="playstore">
+                   <p>
+                   Download the Porter App</p>
+                   <div>
+                    <img id="img-1"
+                    src="https://www.freepnglogos.com/uploads/play-store-logo-png/play-store-logo-nisi-filters-australia-11.png">
+                <img id="img-2" src="https://www.vortex6.com/wp-content/uploads/2019/09/app-store.png">
+                   </div>
+               </div>
+        </div>
+        </div>
+        <div class="porters">
+            <h3>PORTERS FOR YOU</h3>
+            <div class="hr"></div>
+            <div class="tab">
+                <div class="tablinks" onclick="openCity(event,'wheeler-3')"> <img src="/images/truck-1.png" alt="">
+                    <p>3 WHEELER (HELPER)</p>
+                </div>
+
+                <div class="tablinks" onclick="openCity(event, 'wheeler-2')"><img src="/images/truck-4.png" alt="">
+                    <p>2 WHEELER</p>
+                </div>
+
+                <div class="tablinks" onclick="openCity(event, 'ace')"> <img src="/images/truck-3.png" alt="">
+                    <p>ACE (HELPER)</p>
+                </div>
+
+
+                <div class="tablinks" onclick="openCity(event, 'ace-1ton')"><img src="/images/truck-2.png" alt="">
+                    <p>8FT 1TON</p>
+                </div>
+
+                <div class="tablinks" onclick="openCity(event, 'wheeler-3')"> <img src="/images/truck-5.png" alt="">
+                    <p>3 WHEELER</p>
+                </div>
+
+
+                <div class="tablinks" onclick="openCity(event, 'ft-pickup')"><img src="/images/truck-1.png" alt="">
+                    <p>8FT PICKUP</p>
+                </div>
+
+
+                <div class="tablinks" onclick="openCity(event, 'tata407')"> <img src="/images/truck-1.png" alt="">
+                    <p>TATA 407</p>
+                </div>
+
+                <div class="tablinks" onclick="openCity(event, 'ace-helper')"><img src="/images/truck-5.png" alt="">
+                    <p>ACE (HELPER + 1 LABOUR)</p>
+                </div>
+
+
+            </div>
+
+            <div id="wheeler-3" class="tabcontent">
+                <div class="wheeler-3">
+                    <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/3_wheeler_helper-51343864a9a26168e4bfc00ad299c33515cc01b793fc8b797c380aa46abf19c3.png"
+                        alt="">
+                    <div>
+                        <h3>RENT 3 WHEELER(HELPER)</h3>
+                        <div class="fare">Fares starting from Rs.160</div>
+                        <p>Base fare includes 1.0 km distance and 55 minutes of time
+                            Pricing may vary based on your locality.
+                            Road tax, parking etc as applicable over and above ride fare.</p>
+                        <button class="know-more">KNOW MORE ></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="wheeler-2" class="tabcontent">
+                <div class="wheeler-3">
+                    <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/2_wheeler-947e3c6aac74dcdd11fdd4059e4ee72132b276200dff063d6dff2c445f7aab5b.png"
+                        alt="">
+                    <div>
+                        <h3>RENT 2 WHEELER</h3>
+                        <div class="fare">Fares starting from Rs.40</div>
+                        <p>Base fare includes 1.0 km distance and 55 minutes of time
+                            Pricing may vary based on your locality.
+                            Road tax, parking etc as applicable over and above ride fare.</p>
+                        <button class="know-more">KNOW MORE ></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ace" class="tabcontent">
+                <div class="wheeler-3">
+                    <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/tata_ace_closed-e92a36b3508e6e3b1804fd2015adbfb6c948bc35afab36699440785ed83b5b24.png"
+                        alt="">
+                    <div>
+                        <h3>RENT ACE (HELPER)</h3>
+                        <div class="fare">Fares starting from Rs.210</div>
+                        <p>Base fare includes 1.0 km distance and 55 minutes of time
+                            Pricing may vary based on your locality.
+                            Road tax, parking etc as applicable over and above ride fare.</p>
+                        <button class="know-more">KNOW MORE ></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ace-1ton" class="tabcontent">
+                <div class="wheeler-3">
+                    <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/8ft_1ton-a9abd7ed5e7104c62305c68c97527eac0ff7d40dd7808175d097546b57f901d7.png"
+                        alt="">
+                    <div>
+                        <h3>RENT 8FT 1TON</h3>
+                        <div class="fare">Fares starting from Rs.300</div>
+                        <p>Base fare includes 1.0 km distance and 55 minutes of time
+                            Pricing may vary based on your locality.
+                            Road tax, parking etc as applicable over and above ride fare.</p>
+                        <button class="know-more">KNOW MORE ></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ft-pickup" class="tabcontent">
+                <div class="wheeler-3">
+                    <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/tata_ace_closed-e92a36b3508e6e3b1804fd2015adbfb6c948bc35afab36699440785ed83b5b24.png"
+                        alt="">
+                    <div>
+                        <h3>
+                            RENT 8FT PICKUP</h3>
+                        <div class="fare">Fares starting from Rs.325</div>
+                        <p>Base fare includes 1.0 km distance and 55 minutes of time
+                            Pricing may vary based on your locality.
+                            Road tax, parking etc as applicable over and above ride fare.</p>
+                        <button class="know-more">KNOW MORE ></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="tata407" class="tabcontent">
+                <div class="wheeler-3">
+                    <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/tata_407-b968c07406c8b63fca431ef8ea2152caf5272b0013502a73d2390289f1138505.png"
+                        alt="">
+                    <div>
+                        <h3>RENT TATA 407</h3>
+                        <div class="fare">Fares starting from Rs.625</div>
+                        <p>Base fare includes 1.0 km distance and 55 minutes of time
+                            Pricing may vary based on your locality.
+                            Road tax, parking etc as applicable over and above ride fare.</p>
+                        <button class="know-more">KNOW MORE ></button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ace-helper" class="tabcontent">
+                <div class="wheeler-3">
+                    <img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/large_vehicles/3_wheeler_helper-51343864a9a26168e4bfc00ad299c33515cc01b793fc8b797c380aa46abf19c3.png"
+                        alt="">
+                    <div>
+                        <h3>RENT ACE (HELPER)</h3>
+                        <div class="fare">Fares starting from Rs.160</div>
+                        <p>Base fare includes 1.0 km distance and 55 minutes of time
+                            Pricing may vary based on your locality.
+                            Road tax, parking etc as applicable over and above ride fare.</p>
+                        <button class="know-more">KNOW MORE ></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- </div> -->
+        </div>
+
+        <div id="transforming_cities">
+            <div id="transforming_header">
+              <div id="transforming_header_text">
+                OTHER CITIES WE SERVE
+                  <div class="hr"></div>
+                </div>
+         </div>
+        
+        <div id="header_text">
+            <p>We are present right where you need us and take care of all your <br> logistics requirements. Our cost-effective solutions make us the right partner for <br>your business, enterprise or for your household goods movement anywhere in India.</p>
+        </div>
+
+          <div id="transforming_images">
+              <div>
+               <div id="mumbai"><img src="/images/mumbai.png" alt=""></div>
+                  <p>Mumbai</p>
+              </div>
+            <div>
+             <div id="delhi"><img src="/images/delhi.png" alt=""></div>
+                <p>Delhi NCR</p>
+            </div>
+            <div>
+              <div id="banglore"><img src="/images/banglore.png" alt=""></div>
+                <p>Banglore</p>
+            </div>
+            <div>
+                <div id="hydrabad"><img src="/images/hydrabad.png" alt=""></div>
+                <p>Hydrabad</p>
+            </div>
+            <div>
+             <div id="chennai"><img src="/images/chennai.png" alt=""></div>
+                <P>Chennai</P>
+            </div>
+            <div>
+             <div id="ahmedabad"><img src="/images/ahmedabad.png" alt=""></div>
+                <p>Ahmedabad</p>
+            </div>
+            <div>
+               <div id="jaipur"><img src="/images/jaipur.png" alt=""></div>
+                <p>Jaipur</p>
+            </div>
+            <div>
+            <div id="pune"><img src="/images/pune.png" alt=""></div>
+                <p>Pune</p>
+            </div>
+            <div>
+               <div id="kolkata"><img src="/images/kolkata.png" alt=""></div>
+                <P>Kolkata</P>
+            </div>
+            <div>
+             <div id="surat"><img src="/images/surat.png" alt=""></div>
+             <p>Surat</p>
+            </div>
+            <div>
+             <div id="lucknow"><img src="/images/lucknow.png" alt=""></div>
+                <P>Lucknow</P>
+            </div>
+            <div>
+           <div id="coimbtore"><img src="/images/coimbtore.png" alt=""></div>
+           <p>Coimbtore</p>
+            </div>
+            <div>
+                <div id="indore"><img src="/images/indore.png" alt=""></div>
+                <p>Indore</p>
+            </div>
+            <div>
+            <div id="nagpur"><img src="/images/nagpur.png" alt=""></div>
+                <p>Nagpur</p>
+            </div>
+            <div>
+            <div id="chandigarh"><img src="/images/chandigarh.png" alt=""></div>
+                <p>Chandigarh</p>
+            </div>
+          </div>
+        
+        </div>
+
+        <div class="footer">
+            <!-- imported -->
+            <div class="knowus" style="color: white;">
+                <div id="know">
+                    <h3 id="porter">PORTER</h3>
+                    <ul class="porter">
+                        <li>Send anything</li>
+                        <li>anywhere</li>
+                        <li>anytime</li>
+                    </ul>
+                </div>
+                <div id="know2">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">offers</a></li>
+                        <li><a href="">Careers</a></li>
+                        <li><a href="">Blog</a></li>
+                    </ul>
+                </div>
+                <div id="know3">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="">City Tempo</a></li>
+                        <li><a href="">For Enterprise</a></li>
+                        <li><a href="">Packers & Movers</a></li>
+                    </ul>
+                </div>
+                <div id="know3">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="">Chat with us <i class="fab fa-whatsapp"></i></a></li>
+                        <li><a href="">Need Help?</a></li>
+                        <li><a href="">Terms of Service</a></li>
+                        <li><a href="">Insurance FAQs</a></li>
+                    </ul>
+                </div>
+                <div id="know4">
+                    <h3>Download App</h3>
+                    <div id="dowapp">
+                        <img id="img-1"
+                            src="https://www.freepnglogos.com/uploads/play-store-logo-png/play-store-logo-nisi-filters-australia-11.png">
+                        <img id="img-2" src="https://www.vortex6.com/wp-content/uploads/2019/09/app-store.png">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="knowus" style="color: white;">
+                <div id="know">
+                    <h3>We are here</h3>
+                    <ul>
+                        <li><a href="">Mumbai</a></li>
+                        <li><a href="">Ahmedabad</a></li>
+                        <li><a href="">Lucknow</a></li>
+                    </ul>
+                </div>
+                <div id="know2">
+                    <ul>
+                        <li><a href="">Delhi NCR</a></li>
+                        <li><a href="">Jaipur</a></li>
+                        <li><a href="">Coimbatore</a></li>
+                    </ul>
+                </div>
+                <div id="know3">
+                    <ul>
+                        <li><a href="">Bangalore</a></li>
+                        <li><a href="">Pune</a></li>
+                        <li><a href="">Indore</a></li>
+                    </ul>
+                </div>
+                <div id="know3">
+                    <ul>
+                        <li><a href="">Hyderabad</a></li>
+                        <li><a href="">Kolkata</a></li>
+                        <li><a href="">Nagpur</a></li>
+                    </ul>
+                </div>
+                <div id="know3">
+                    <ul>
+                        <li><a href="">Chennai</a></li>
+                        <li><a href="">Surat</a></li>
+                        <li><a href="">Chandihgarh</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="last-foot">
+                <div id="sociallink">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+
+                <div class="text">
+                    <p>2021 SmartShift Logistics Solutions Pvt. Ltd.
+                        CIN: U74999MH2014PTC306120</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="screen-div">
+            <div class="track-order">
+                <div class="track-head">
+                    <h3>Track Order</h3>
+                    <img  class="close" src="./images/close-line.png" alt="" >
+                </div>
+                <div class="inputs">
+                    <input type="text" placeholder="CRN">
+                    <input type="text" placeholder="+91-">
+                    <button>TRACK ORDER</button>
+                </div>
+                <div class="track-foot">
+                    <p>For Packers & Movers related query, br
+                       <br> call us at <a>022 4410 4444</a></p>
+                    <img src="./images/accept-call.png" alt="" class="caller-icon">
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</body>
+</html>
+
+<script>
+
+ function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    var tracker = document.querySelector(".screen-div")
+    tracker.style.display = "none"
+
+    document.querySelector(".track-btn").addEventListener("click", function () {
+        console.log("click")
+        tracker.style.display = "block"
+    })
+
+    document.querySelector(".close").addEventListener("click", function () {
+        console.log("close")
+        tracker.style.display = "none"
+    })
+
+
+
+    var cityarr = JSON.parse(localStorage.getItem("city")) || []
+    console.log("cityarr",cityarr)
+
+let cityobj=[
+{
+    id:"mumbai",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in MUMBAI",
+    citydiscription:"or one the largest business hubs in India, Porter brings to you a vast fleet of vehicles to help you transport & move your goods within the city. Porter offers mini trucks, tempos, pickup vans, 8ft vehicles & three wheelers like tata ace, tata 407 and mahindra pickup 8ft etc. Additionally, for instant deliveries, Porter also provides two wheelers. The services at Porter are available for both individual & commercial business purposes. With Porter for Enterprise solutions, you can get logistics benefits for your business of any size. With Porter, you get vehicles at affordable costs, along with verified drivers & real time location tracking, making it all a very seamless experience. Book Porter now to know more!",
+},
+
+{
+    id:"delhi",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in DELHI",
+    citydiscription:"In the nation’s capital & its nearby areas, Delhi-NCR,businesses of various nature, size & kind are booming. To help all these businesses & individuals with their intra-city logistics & transport requirements, Porter has introduced a vast fleet of vehicles ranging from 2W/3W/4W or 8feet pickup tempo trucks to help one with moving goods & packages. These tempo trucks can be used for commercial purposes, along with personal reasons, like for house shifting purposes or to get goods delivered from electronic stores. For businesses operating out of multiple cities and with multiple number of bookings, Porter offers a Porter For Enterprise option as well. Porter is now India’s Largest Marketplace for Intra-City Logistics.",
+},
+
+{
+    id:"banglore",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in BANGALORE",
+    citydiscription:"For the people of the Garden City or recently turned Silicon Valley, Bangalore Porter brings to you a fleet of vehicles ranging from 2W/3W/4W/8feet pickup to help you with intra-city logistics. These tempo trucks will help you transport & deliver goods for both personal and commercial purposes. The vehicles are suited for small/medium sized businesses as well and Porter also offers an enterprise solution for businesses to look into. The 2W service would help send goods within the city instantly. With Porter, you receive verified drivers, real-time location information & transparent pricing model. Be it transporting textiles, textile machinery, auto components, steel, aluminium, pumps and motors or shifting house, furniture and luggage, Porter has a solution for all. Just download the app and rent a vehicle.",
+},
+
+{
+    id:"hydrabad",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in HYDERABAD",
+    citydiscription:"For one of the largest hubs & booming metropolitan cities of India, Porter brings to Hyderabad a vast fleet of vehicles to help businesses and individuals solve their intra-city logistic problems. From Tata Ace, Tata 407, Pickup 8 feet, 3 wheelers & 2 wheelers among other vehicles, one can easily transport goods within the city. Verified drivers, real-time location tracker & transparent pricing - technology-enabled solutions make delivery services more effective & efficient. Individuals can also hire Porter trucks for house shifting purposes or for getting groceries delivered from the store.For businesses setup in various cities, Porter also offers an enterprise solution to make the entire process easier & more efficient.Porter’s services are available to all kinds of businesses, including traders, manufactures, distributors, retailers, wholesalers, contractors and individuals by facilitating efficient logistics to cater to their every transport need. Book Porter & experience the ease in logistics.",
+},
+
+{
+    id:"chennai",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in CHENNAI",
+    citydiscription:"Famous as the biggest cultural and economic centre down south, Chennai houses huge automobile, hardware manufacturing, textile & apparel industries. The majority of the transport of commercial goods in Chennai is facilitated by mini trucks, tempos & 8ft vehicles like tata ace also known as 'kutty yanai' & mahindra pickup 8ft. With Porter’s multiple vehicles on board options, businesses & individuals have a variety of options to choose from. Porter also offers 2W services to moving packages within the city. Porter is leading the way to boost a monumental change in logistics by providing mini trucks via our faster, more economical & reliable tech enabled solution. The services are available for all types of businesses, traders, manufactures, distributors, retailers, wholesalers, contractors and individuals by facilitating efficient logistics to cater to their every transport need.",
+},
+
+{
+    id:"ahmedabad",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in AHMEDABAD",
+    citydiscription:"For the second-largest centre of the cotton textile industry in India, Porter brings to Ahmedabad a vast fleet of vehicles to help the city’s businesses bloom. For all intra-city, outstation logistics requirements for both personal & commercial purposes, Porter helps by being India’s largest marketplace for Intra-city logistics. From Tata Ace, Tata 407, Pickup 8 feet, 3 wheelers & 2 wheelers among other vehicles, one can easily transport goods within the city. Verified drivers, real-time location tracker & transparent pricing - technology-enabled solutions make delivery services more effective & efficient.The truck's services are also extended for house shifting purposes, getting groceries delivered and for goods deliveries as well. For businesses setup in various cities, Porter also offers an enterprise solution to make the entire process easier & more efficient.;Porter’s services are available to all kinds of businesses, including traders, manufactures, distributors, retailers, wholesalers, contractors and individuals by facilitating efficient logistics to cater to their every transport need. Book Porter & experience the ease in logistics.",
+},
+
+{
+    id:"jaipur",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in JAIPUR",
+    citydiscription:"India’s largest marketplace for Intra-city logistics is now in Jaipur. At Porter, you can book 2wheelers, 3 wheelers, trucks, tempos, 8feet pickups to move & transport your goods in and around the city. You can avail Porter’s services for both business & personal needs. Porter’s services are available to all kinds of businesses, including traders, manufactures, distributors, retailers, wholesalers, contractors and individuals by facilitating efficient logistics to cater to their every transport need. The services are also available for individuals looking for house shifting. For businesses operating out of multiple cities and with multiple number of bookings, Porter offers a Porter For Enterprise option as well. Porter is here to help your business grow. Download and book Porter to resolve all your logistics requirements.",
+},
+
+{
+    id:"pune",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in PUNE",
+    citydiscription:"Porter brings its intra-city logistics services to Pune. Rent any mini tempo truck or a large 8feet pickup tempo truck in pune online via Porter and get the service tempo at the lowest fare. Porter will help you and your business send across goods & packages within or around the city. With verified drivers, real-time location tracker & transparent pricing policy, Porter helps both its customers & driver-partners in achieving the best of the ride. Porter’s services are available to all kinds of businesses, including traders, manufactures, distributors, retailers, wholesalers, contractors and individuals by facilitating efficient logistics to cater to their every transport need.Book a Porter vehicle now & move all your goods, easily!",
+},
+{
+    id:"kolkata",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in KOLKATA",
+    citydiscription:"Porter comes to the city of joy with its vast fleet of vehicles and hassle free intra-city logistics solutions. The tech based logistic company services are available for all types of businesses, traders, manufactures, distributors, retailers, wholesalers, contractors and individuals by facilitating efficient logistics to cater to their every transport need. Porter is leading the way to boost a monumental change in logistics by providing Tata Ace, Tata 407, Pickup 8 feet, 3 wheelers & 2 wheelers among other vehicles. With Porter, you receive verified drivers, real-time location information & transparent pricing model. Be it transporting steel, cement, pharmaceuticals, electronics, textiles or shifting house, furniture and luggage, Porter has a solution for all. Just download the app and rent a vehicle.",
+},
+
+{
+    id:"surat",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in SURAT",
+    citydiscription:"Porter is in the Diamond City of India. The city has well-established diamond and textile industries, and caters as a shopping centre for apparels and accessories. With Porter, businesses of any size can send across their small, medium, large goods & packages within or around the city at the best rates.Porter offers a vast fleet of vehicles - Tata Ace, Tata 407, Pickup 8 feet, 3 wheelers & 2 wheelers among other vehicles. On booking a Porter vehicle, you get a verified driver, real-time location sharing access & transparent pricing. You no longer have to worry about booking a vehicle to transport your goods.Porter’s services are available to all kinds of businesses, including traders, manufactures, distributors, retailers, wholesalers, contractors and individuals by facilitating efficient logistics to cater to their every transport need. Book Porter & experience the ease in logistics.",
+},
+
+{
+    id:"lucknow",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in LUCKNOW",
+    citydiscription:"Smile, Porter is now in Lucknow! Porter offers a vast fleet of vehicles ranging from 2W/3W/4W/8feet pickup to help you with intra-city logistics. These tempo trucks will help you transport & deliver goods for both personal and commercial purposes. The vehicles are suited for small/medium sized businesses as well and Porter also offers an enterprise solution for businesses to look into. The 2W service would help send goods within the city instantly. With Porter, you receive verified drivers, real-time location information & transparent pricing model. Be it transporting textiles, textile machinery, auto components, steel, aluminium, pumps and motors or shifting house, furniture and luggage, Porter has a solution for all. Just download the app and rent a vehicle.",
+},
+
+{
+    id:"coimbtore",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in COIMBATORE",
+    citydiscription:"Porter comes to the Manchester of South India and brings hassle free logistics solutions. With its vast fleet of vehicles from Tata Ace, Tata 407, Pickup 8 feet, 3 wheelers & 2 wheelers among other vehicles, Porter tech enabled interventions help both businesses and individuals in transporting and moving goods within or around the city, effectively & efficiently.The vehicles are suited for small/medium sized businesses as well and Porter also offers an enterprise solution for businesses to look into. The 2W service would help send goods within the city instantly. With Porter, you receive verified drivers, real-time location information & transparent pricing model. Be it for transporting textiles, textile machinery, auto components, steel, aluminium, pumps and motors or shifting house, furniture and luggage, Porter has a solution for all. Just download the app and rent a vehicle.",
+},
+
+{
+    id:"indore",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in INDORE",
+    citydiscription:"If you had to describe the largest city of Madhya Pradesh in three words, it would be - Industrial, prosperous, & metropolitan. Indore is a hub for cotton textiles, industrial manufacturing, automobiles, pharmaceuticals, among many other major industries. For the city so varied in its business, Porter brings for you an on-demand goods vehicle for your intra-city logistics needs. With both large-scale & small-scale businesses flourishing in the city, we serve everyone from an SME with goods transport problems to an individual with shifting headaches, with our large fleet of vehicles ranging from a two-wheeler to different sized trucks. With Porter you get hassle-free services, verified drivers - anytime, anywhere. Book Porter now!",
+},
+
+{
+    id:"nagpur",
+    cityname:"Rent Mini Trucks & Tempo for Goods Tranport & Delivery in NAGPUR",
+    citydiscription:"For the emerging Metropolis of India and the fastest growing millionaire city, Porter brings to you hassle-free logistics solutions for all your business and industrial needs. From Tata Ace, Tata 407, Pickup 8 feet, 3 wheelers & 2 wheelers among other vehicles, one can easily transport goods within the city. Verified drivers, real-time location tracker & transparent pricing - technology-enabled solutions make delivery services more effective & efficient. Individuals can also hire Porter trucks for house shifting purposes or bikes for getting groceries delivered from the store. For businesses setup in nearby cities, Porter also offers enterprise transport solutions;One can book tempo trucks online and hire these vehicles to carry out any kind of first or last mile deliveries. Understanding Nagpur's long standing relationship with commerce and the export of oranges, silk, cotton, extracted products, etc,. Porter’s online marketplace for intra-city logistics services will help accelerate business growth in the city. Book a Porter vehicle now & move all your goods, easily!With Porter you get hassle-free services, verified drivers - anytime, anywhere. Book Porter now!",
+},
+{
+    id:"chandigarh",
+    cityname:"",
+    citydiscription:"Porter comes to the city of beauty, Chandigarh with its vast fleet of vehicles and hassle free intra-city logistics solutions drivers, real-time location tracker & transparent pricing - technology-enabled solutions make delivery services more effective & efficient. Individuals can also hire Porter trucks for house shifting purposes or bikes for getting groceries delivered from the store. For businesses setup in nearby cities, Porter also offers enterprise transport solutions;One can book tempo trucks online and hire these vehicles to carry out any kind of first or last mile deliveries. Understanding Nagpur's long standing relationship with commerce and the export of oranges, silk, cotton, extracted products, etc,. Porter’s online marketplace for intra-city logistics services will help accelerate business growth in the city. Book a Porter vehicle now & move all your goods, easily!With Porter you get hassle-free services, verified drivers - anytime, anywhere. Book Porter now!"
+}
+]
+
+ localStorage.setItem("city",JSON.stringify(cityobj));
+</script>
