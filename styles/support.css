@@ -1,0 +1,763 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 95vw;
+    height: fit-content;
+    overflow-x: hidden;
+    font-family: 'Titillium Web', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.all{
+    width: 90vw;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.navbar{
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+}
+.navbar img{
+    width: 100%;
+    height: fit-content;
+    position: sticky;
+    left: 0;
+    top: 0;
+}
+.nav-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 0px;
+    margin: auto;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.nav-2 > div{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    justify-content: space-around;
+}
+.nav-2 > div > div , .nav-2 > div > p{
+    margin: 0px 15px;
+}
+
+.nav-2 > div > div:hover , .nav-2 > div > p:hover{
+    font-weight: 700;
+    border-bottom: 2px solid blue;
+    color: blue;
+}
+
+
+#support_container{
+    border: 1px solid blue;
+    height: 425px;
+    background-image: linear-gradient(105deg, #2962FF, #5e0be0);
+    font-family: 'Titillium Web', sans-serif;
+        /* border: 1px solid red; */
+
+}
+#support_container .title {
+    margin: auto;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 3%;
+    
+}
+#support_container .head{
+    text-align: center;
+    color: white;
+    margin-top: 1%;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    
+}
+.supportcard{
+    /* border: 1px solid red; */
+    height: 360px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,180px);
+    box-shadow: 0 0 8px 1px rgb(0 0 0 / 50%);
+    border-radius: 10px;
+    transform: translateY(-60%);
+    /* z-index: 10001; */
+    margin:70px;
+}
+.supportcard1{
+    /* border: 1px solid red; */
+    border: 1px solid rgb(172, 168, 168);
+  background-color: white;
+}
+ .divforfirstbox{
+    /* border: 1px solid red; */
+    width: 95%;
+    height: 135px;
+    margin-left: 15px;
+    margin-top: 25px;
+  
+    display: flex;
+} 
+.divforimage{
+    /* border: 1px solid red; */
+    margin-left: 20px;
+    /* margin-top: 0%; */
+}
+.divforimage img{
+    /* border: 1px solid red; */
+    width: 80%;
+    height: 110px;
+  
+} 
+.customer{
+    width: 81%;
+   
+}
+.customer .customersupportdiv{
+font-family: 'Titillium Web', sans-serif;
+font-weight: 550;
+}
+
+.customersupportdiv1{
+   display: flex;
+   margin-top: 5%;
+}
+
+.customersupportdiv1 a{
+    text-decoration: none;
+    color: #2962FF;
+    font-weight: 600;
+    
+}
+.customersupportdiv2{
+    margin-left: 1%;
+    
+}
+
+.customersupportdiv3{
+    font-size: 16px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #9e9b9b;
+    margin-top: 5px;
+}
+.customersupportdiv3 div{
+    display: inline-block;
+    margin-top: 5px;
+}
+.customersupportdiv3 .mail{
+    padding: 1px;
+    text-decoration: none;
+    color: #2962FF;
+    font-weight: 600;
+}
+.customersupportdiv3 .tel{
+    padding: 1px;
+    text-decoration: none;
+    color: #2962FF;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+}
+/* 2nd */
+.Packers_movers{
+    font-size: 16px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #9e9b9b;
+    margin-top: 45px;
+}
+.Packers_movers div{
+    display: inline-block;
+    margin-top: 5px;
+}
+.Packers_movers .mail{
+    padding: 1px;
+    text-decoration: none;
+    color: #2962FF;
+    font-weight: 600;
+}
+.Packers_movers .tel{
+    padding: 1px;
+    text-decoration: none;
+    color: #2962FF;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+}    
+/* 3rd  */
+.enterprices_services{
+    font-size: 16px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #9e9b9b;
+    margin-top: 35px;
+}
+.enterprices_services div{
+    display: inline-block;
+    margin-top: 5px;
+}
+.enterprices_services .mail{
+    padding: 1px;
+    text-decoration: none;
+    color: #2962FF;
+    font-weight: 600;
+    display: inline-block;  
+}
+.enterprices_services .tel{
+    padding: 1px;
+    text-decoration: none;
+    color: #2962FF;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+} 
+/* 4th */
+.drive_with_porter{
+    font-size: 16px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #9e9b9b;
+    margin-top: 35px;
+}
+.drive_with_porter div{
+    display: inline-block;
+    margin-top: 5px;
+}
+.drive_with_porter .link    {
+    padding: 1px;
+    text-decoration: none;
+    color: #2962FF;
+    font-weight: 600;
+    display: inline-block;
+}
+.drive_with_porter .tel{
+    padding: 1px;
+    text-decoration: none;
+    color: #2962FF;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    
+}
+
+/* offices places */
+.city_offices_container{
+    /* border: 1px solid red; */
+    /* height: 600px; */
+    margin-top: -13rem;
+    display: flex;
+}
+.ouroffices{
+    /* border: 1px solid red; */
+    /* height: 1000px; */
+    width: 15%;
+    margin-left: 4%;
+}
+.ouroffices2 h2{
+    color: #5e0be0;
+    opacity: 0.4;
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-family: 'Titillium Web', sans-serif;
+    /* border: 1px solid red; */
+    margin-top: 0px;
+}
+.ouroffices3 h1{
+    color: #5e0be0;
+    opacity: 0.4;
+    font-weight: bold;
+    font-size: 50px;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    /* border: 1px solid red; */
+    /* margin-bottom: 50px; */
+}
+.officeporter_container{
+    /* border: 1px solid red; */
+    width: 100%;
+    display: flex;
+}
+
+.headoffice_porter{
+    /* border: 1px solid red; */
+    width: 28%;
+    height: 315px;
+    margin-top: 11%;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 1px grey;
+}
+.headoffice_porter h2{
+    margin-left: 7%;
+    margin-top: 8%;
+    font-size: 21px;
+    color: #212121;
+}
+
+.bar{
+    /* border: 1px solid red; */
+    width: 42px;
+    height: 4px;
+    border-radius: 10px;
+    margin-left: 7%;
+    background-image: linear-gradient(84deg, #2962FF, #5e0be0);
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.headoffice_porter .bangloreoffice{
+    font-size: 26px;
+    color:  #5e0be0;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.div_address p{
+    margin-top: 7%;
+    font-size: 18px;
+    text-align: left;
+    margin-left: 7%;
+    line-height: 23px;
+    color: #818181;
+    font-family: 'Titillium Web', sans-serif;
+    margin-bottom: 9%;
+}
+
+.direction{
+    font-weight: 700;
+    color: #2962FF;
+    text-decoration: none;
+    margin-left: 7%;
+    text-transform: uppercase;
+    font-family: 'Titillium Web', sans-serif;
+    cursor: pointer;
+    font-size: 17px;
+    /* border: 1px solid red */
+}
+
+.otheroffice{
+    /* border: 1px solid red; */
+    /* height: 1000px; */
+    width: 64%;
+    margin-left: 2%;
+    background-image: linear-gradient(105deg, #2962FF, #5e0be0)
+}
+
+.regional_offices{
+    /* border: 1px solid red; */
+    width: 30%;
+    height: 45px;
+    margin-top: 5%;
+    margin-left: 5%;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+    font-family: 'Titillium Web', sans-serif;
+}
+.otheroffice .bar{
+    /* border: 1px solid red; */
+    width: 40px;
+    height: 4px;
+    border-radius: 10px;
+    margin-left: 5%;
+   background-color: #fff;
+   background-image: none;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.cities{
+  /* border: 1px solid red; */
+  /* height: 500px; */
+  width: 85%;
+  margin-left: 5%;
+  margin-top: 6%;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: column; */
+
+}
+/* 1st */
+.address_div{
+    /* border: 1px solid red; */
+    display: flex;
+}
+
+.support_office_container{
+    /* border: 1px solid red; */
+    width: 50%;
+    height: 250px;;
+}
+
+.cities .mumbai{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+}
+
+.cities .address{
+    width: 89%;
+    margin-top: 3%;
+    /* border: 1px solid red; */
+    text-align: left;
+    line-height: 25px;
+    font-family: 'Titillium Web', sans-serif;
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+.office_direction a{
+    margin-top: 5%;
+    text-decoration: none;
+    /* border: 1px solid red; */
+    color: rgba(255,255,255,0.7);
+    font-weight: 700;
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+/* 2nd */
+.address_div1{
+    /* border: 1px solid red; */
+    display: flex;
+    margin-top: 7%;
+}
+
+.address_div .delhi{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+}
+.address_div1 .hyderabad{
+    width: 35%;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    /* border: 1px solid red; */
+    }
+
+.address_div1 .chennai{
+    width: 35%;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    /* border: 1px solid red; */
+    }
+.address_div1 .ahmedabad{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+} 
+.address_div1 .jaipur{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+}
+    
+.address_div1 .pune{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+}    
+
+.address_div1 .kolkata{
+    width: 35%;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    /* border: 1px solid red; */
+    }
+.address_div1 .surat{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+}
+.address_div1 .lucknow{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+}
+.address_div1 .coimbatore{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+}
+.address_div1 .indore{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+}
+.address_div1 .nagpur{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+}   
+.address_div1 .chandigarh{
+width: 35%;
+font-size: 28px;
+font-weight: 700;
+color: #fff;
+/* border: 1px solid red; */
+}     
+
+
+
+
+
+
+                                   /* FOOTER */
+                                   .knowus{
+                                    height: fit-content;
+                                    width: 100%;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: space-around;
+                                    align-items: flex-start;
+                                    background-color: rgb(0,0,0);
+                                    color: white;
+                                    padding-top: 25px;
+                                    font-family: 'Titillium Web', sans-serif;
+                                }
+                                .knowus h3{
+                                    font-size: 17px;
+                                    margin-bottom: 20px;
+                                    color: white;
+                                    font-weight: 700;
+                                }
+                                #porter{
+                                    font-size: 32px;
+                                }
+                                .knowus ul{
+                                    font-size: 14px;
+                                    width: 170px;
+                                    height: 170px;
+                                    text-align: start;
+                                    color: white;
+                                    list-style: none;
+                                }
+                                .porter li{
+                                    font-size: 22px;
+                                }
+                                .knowus li{
+                                    margin-bottom: 8px;
+                                    margin: 15px 0px;
+                                
+                                }
+                                .knowus li a{
+                                    color: white;
+                                    text-decoration: none;
+                                    font-size: 15px;
+                                }
+                                .knowus li a:hover{
+                                    color: orange;
+                                }
+                                #dowapp{
+                                    display: flex;
+                                    flex-direction: column;
+                                    margin: 10px 0px;
+                                    align-items: flex-start;
+                                }
+                                #sociallink{
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+                                #img-1, #img-2{
+                                     width: 200px;
+                                     height: 80px;
+                                }
+                                
+                                
+                                /* last-row */
+                                .last-foot{
+                                    background-color: rgb(0,0,0);
+                                    width: 100%;
+                                    height: 50px;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: space-around;
+                                }
+                                .last-foot img{
+                                    height: auto;
+                                }
+                                .last-foot:hover{
+                                    cursor: not-allowed;
+                                }
+                                #sociallink{
+                                    display: flex;
+                                    flex-direction: row;
+                                }
+                                #sociallink i{
+                                    width: 40px;
+                                    font-size: 25px;
+                                    color: white;
+                                    margin: 0px 30px;
+                                }
+                                .text{
+                                    color: white;
+                                }
+          
+                                
+
+
+                                
+            /* TRACKER */
+.screen-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    width: 100vw;
+    height:90vh;
+}
+.track-order{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    height: 400px;
+    margin: auto;
+    margin-top: 200px;
+}
+.track-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+    align-items: center;
+    border-bottom: 1px solid rgb(196,196,196);
+    margin-top: 10px;
+}
+
+.track-head img, .caller-icon{
+    width: 20px;
+    height: 20px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+.inputs input{
+    width: 80%;
+    padding: 10px 15px;
+    margin: 20px auto;
+}
+.inputs button{
+    background-color: rgb(41,98,255);
+    color: white;
+    font-weight: 700;
+    border: none;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+
+.track-foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-top:  1px solid rgb(196,196,196);
+    padding: 15px 0px;
+}
+
+
+
+                         /* @media screen */
+
+       @media screen and (max-width: 800px) { 
+          body{
+              width: 800px;
+              height: fit-content;
+              overflow-x: hidden;
+              font-family: 'Titillium Web', sans-serif;
+          }
+          .all{
+              width: 800px;
+              margin: auto;
+              box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+              overflow: hidden;
+          }
+          .navbar{
+              width: 100%;
+              overflow-x: hidden;
+          }
+          .nav-2{
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              text-align: center;
+              height: fit-content;
+          }
+          .head{
+            display: none;
+          }
+          .supportcard{
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              margin: 10px auto;
+              transform: translateY(-90%);
+          }
+          .supportcard1{
+              width: fit-content;
+              height: fit-content;
+              margin:  auto;
+              position: relative;
+              top: 0;
+  padding: 10px;
+          }
+          .city_offices_container{
+              position: relative;
+              top: 280px;
+              height: fit-content;
+          }
+          .cities{
+              width: 100%;
+              height: fit-content;
+          }
+          .support_office_container:nth-child(2) {
+            display: none;
+          }
+
+    .footer{
+        width: 100%;
+        margin: auto;
+        position: relative;
+    }
+    #know3{
+        display: none;
+    }
+    .last-foot{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .last-foot > div{
+       margin: 20px auto;
+    }
+}

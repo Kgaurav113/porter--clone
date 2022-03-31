@@ -316,10 +316,12 @@ margin: 5px 0px;
 
 .porters{
     width: 60%;
-    height: 650px;
+    height: fit-content;
     margin: auto;
     border-radius: 10px;
     text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
 }
 .tab{
     width: 70%;
@@ -368,7 +370,7 @@ justify-content: space-between;
 width: 100%;
 padding: 10px 15px;
 }
-.head-es button{
+.head-es button , .end-foot button{
    width: fit-content;
    padding: 10px;
    font-weight: 600;
@@ -389,6 +391,9 @@ padding: 10px 15px;
 }
 .btns{
     width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    
 }
 .btns button{
     border: none;
@@ -404,3 +409,88 @@ padding: 10px 15px;
     font-weight: 600;
     margin: 10px 20px;
 }
+.end-foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px;
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.end-foot img{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+/* estimations */
+
+.porters{
+    position: fixed;
+    top: 120px;
+    left: 320px;
+    background-color: white;
+}
+
+
+
+                         /* @media screen */
+
+                         @media screen and (max-width: 800px) { 
+                            body{
+                                width: 800px;
+                                height: fit-content;
+                                overflow-x: hidden;
+                                font-family: 'Titillium Web', sans-serif;
+                            }
+                            .all{
+                                width: 800px;
+                                margin: auto;
+                                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                                overflow: hidden;
+                            }
+                            .navbar{
+                                width: 100%;
+                                overflow-x: hidden;
+                            }
+                            .nav-2{
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                text-align: center;
+                                height: fit-content;
+                            }
+.estimations{
+    width: 100%;
+    padding: 20px;
+}
+
+.porters{
+    position: absolute;
+    width: 80%;
+    height: fit-content;
+    top: 50px;
+    left: 30px;
+}
+
+
+                            .footer{
+                                width: 100%;
+                                margin: auto;
+                                position: relative;
+                            }
+                            #know3{
+                                display: none;
+                            }
+                            .last-foot{
+                                width: 100%;
+                                height: fit-content;
+                                display: flex;
+                                flex-direction: column;
+                                text-align: center;
+                            }
+                            .last-foot > div{
+                               margin: 20px auto;
+                            }
+                        }

@@ -607,7 +607,11 @@ body{
 
 
 
-/* TRACKER */
+
+
+
+
+                                                                /* TRACKER NAVBAR */
 .screen-div{
     position: fixed;
     top: 0;
@@ -670,7 +674,9 @@ body{
 
 
 
-/* CITIES */
+
+
+                                                                   /* CITIES  */
 #transforming_cities{
    margin-left: 40px;
    display: flex;
@@ -756,70 +762,94 @@ body{
     padding-bottom: 20px;
 }
 
-   /* BOX */
 
-.box{
-    width: 100%;
-    height: fit-content;
-    margin: auto;
-    position: absolute;
-    top: 100px;
-}
-#outofbound{
-    height:50px;
-    width:160px;
-    font-size: 14px;
-    position: absolute;
-    top:-100%;
-    left:30%;
-    display: none;
-}
-#needmob{
-    height:50px;
-    width:160px;
-    font-size: 14px;
-    position: absolute;
-    top:-100%;
-    left:45%;
-    display: none;
-}
-#needsrc{
-    height:50px;
-    width:160px;
-    font-size: 14px;
-    position: absolute;
-    top:-100%;
-    left:23%;
-    display: none;
-}
-#needdes{
-    height:50px;
-    width:160px;
-    font-size: 14px;
-    position: absolute;
-    top:-100%;
-    left:34%;
-    display: none;
-}
-view{
-    margin-top: 10%;
-}
-#estimate{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: solid 1px black;
-    width:70%;
-    height:60px;
-    margin: auto;
-    margin-top: 20%;
-}
-#estimate>div{
-    border: 1px solid lightgray
-}
-#estimate>div>p{
-    font-size: 12px;
-}
-#estimate>div>input,#estimate>div>select,#estimate>div>div>input{
-    border: none;
+
+@media screen and (max-width: 800px) { 
+    body{
+        width: 800px;
+        height: fit-content;
+        overflow-x: hidden;
+        font-family: 'Titillium Web', sans-serif;
+    }
+    .all{
+        width: 800px;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        overflow: hidden;
+    }
+    .navbar{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .nav-2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: fit-content;
+    }
+    .header{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+    }
+    .points{
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0px;
+        justify-content: space-around;
+    }
+    .description-points{
+        width: 60%;
+        margin: auto;
+    }
+    .phone{
+        width: fit-content;
+        margin: 15px auto;
+    }
+    .offers{
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto 0px auto;
+    }
+    #transforming_cities{
+        display: flex;
+   flex-direction: column;
+   width: 100%;
+   justify-content: flex-start;
+   align-items: flex-start;
+   text-align: left;
+    }
+    .transforming_images{
+        width: fit-content;
+        margin: auto;
+    }
+    .header_text{
+        width: 100%;
+        text-align: left;
+        margin: 0px;
+    }
+    .footer{
+        width: 100%;
+        margin: auto;
+    }
+    #know3{
+        display: none;
+    }
+    .last-foot{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .last-foot > div{
+       margin: 20px auto;
+    }
 }

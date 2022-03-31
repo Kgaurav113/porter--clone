@@ -521,3 +521,92 @@ margin: 50px 0px 0px 50px;
         border-top:  1px solid rgb(196,196,196);
         padding: 15px 0px;
     }
+
+
+
+
+ /* @media screen */
+ @media screen and (max-width: 800px){ 
+    body{
+        width: 800px;
+        height: fit-content;
+        overflow-x: hidden;
+        font-family: 'Titillium Web',sans-serif;
+    }
+    .all{
+        width: 800px;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 035) 0px 5px 15px;
+        overflow: hidden;
+    }
+    .navbar{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .nav-2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: fit-content;
+    }
+.posters{
+   display: none;
+}
+.poster-scrrenshot{
+  display: none;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: white;
+    padding: 15px 10px 15px 10px;
+    border-radius: 10px;
+    position: relative;
+    top: 30px;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+}
+.cities{
+    display: flex;
+flex-direction: column;
+width: 100%;
+justify-content: flex-start;
+align-items: flex-start;
+text-align: left;
+padding: 10px;
+}
+.cities .hr{
+    display: none;
+}
+#transforming_images{
+    width: fit-content;
+    margin: auto;
+}
+.header_text{
+    width: 100%;
+    text-align: left;
+    margin: 0px;
+}
+
+
+    .footer{
+        width: 100%;
+        margin: auto;
+    }
+    #know3{
+        display: none;
+    }
+    .last-foot{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .last-foot > div{
+       margin: 20px auto;
+    }
+}
