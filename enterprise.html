@@ -503,4 +503,58 @@
         console.log("close")
         tracker.style.display = "none"
     })
+
+
+
+    function setcity(city){
+         localStorage.setItem("cityname",city)
+         window.location.href="/cityobj.html"
+    }
+
+
+    document.getElementById("mumbai").addEventListener("click",()=>{
+     setcity("mumbai")
+})
+document.getElementById("delhi").addEventListener("click",()=>{
+    setcity("delhi")
+})
+document.getElementById("banglore").addEventListener("click",()=>{
+    setcity("banglore")
+})
+document.getElementById("hydrabad").addEventListener("click",()=>{
+    setcity("hydrabad")
+})
+document.getElementById("chennai").addEventListener("click",()=>{
+    setcity("chennai")
+})
+document.getElementById("ahmedabad").addEventListener("click",()=>{
+    setcity("ahmedabad")
+})
+document.getElementById("jaipur").addEventListener("click",()=>{
+    setcity("jaipur")
+})
+document.getElementById("pune").addEventListener("click",()=>{
+    setcity("pune")
+})
+document.getElementById("kolkata").addEventListener("click",()=>{
+    setcity("kolkata")
+})
+document.getElementById("surat").addEventListener("click",()=>{
+    setcity("surat")
+})
+document.getElementById("lucknow").addEventListener("click",()=>{
+    setcity("lucknow")
+})
+document.getElementById("coimbtore").addEventListener("click",()=>{
+    setcity("coimbtore")
+})
+document.getElementById("indore").addEventListener("click",()=>{
+    setcity("indore")
+})
+document.getElementById("nagpur").addEventListener("click",()=>{
+    setcity("nagpur")
+})
+document.getElementById("chandigarh").addEventListener("click",()=>{
+    setcity("chandigarh")
+})
 </script>

@@ -34,7 +34,11 @@
 
         <div class="city-info">
             <div class="left">
-            <div class="city-img"></div>
+        <div class="img-con">
+            <img class="city-img"></img>
+            <h2 class="c-name"></h2>
+        </div>
+            <div class="titl-city"></div>
             <div class="desc-city"></div>
         </div>
         <div class="right">
@@ -451,8 +455,8 @@
 
 
 
-    var cityarr = JSON.parse(localStorage.getItem("city")) || []
-    console.log("cityarr",cityarr)
+    var cityname = localStorage.getItem("cityname")
+
 
 let cityobj=[
 {
@@ -544,5 +548,16 @@ let cityobj=[
 }
 ]
 
- localStorage.setItem("city",JSON.stringify(cityobj));
+  const getcitydata = cityobj.find((data)=>data.id === cityname)
+  
+  function appenddata(){
+      document.querySelector(".city-img").src = `./images/${getcitydata.id}.png`          
+      document.querySelector(".c-name").innerHTML = getcitydata.id.toUpperCase()
+      document.querySelector(".titl-city").innerHTML = getcitydata.cityname
+      document.querySelector(".desc-city").innerHTML = getcitydata.citydiscription
+
+  }
+
+  appenddata()
+
 </script>
