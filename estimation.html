@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Roboto+Serif:wght@600&family=Titillium+Web&family=Work+Sans:wght@500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/976e422f89.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/976e422f89.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        #body{
+            position: relative;
+        }
+        view{
+            margin-top: 5%;
+        }
+        #estidata
+        {
+            width:70%;
+        }
+        #edit{
+            cursor: pointer;
+        }
+        #edit:hover{
+            background-color: #2962ff;
+            color: white;
+        }
+        #estimate{
+            position: absolute;
+            border: solid 1px black;
+            width:70%;
+            height:160px;
+            justify-content: space-around;
+            z-index: 1; 
+            background-color: white;
+            display: none;
+            top:0%;
+        }
+        #estimate1{
+            display:flex;
+            width:1000px;
+            height:40px;
+            border: 1px solid black;
+        }
+        #estimate>div{
+            margin-top: 5%;
+        }
+        #estimate1>div>input{
+            width:250px;
+            height: 85%;
+            border: none;
+        }
+        #estimate1>div>select{
+            width:250px;
+            height: 100%;
+            border: none;
+
+        }
+        #close{
+            position: absolute;
+            top:0%;
+            right:2%;
+        }
+        #needsrc{
+            height:50px;
+            width:200px;
+            font-size: 14px;
+            position: absolute;
+            top:0%;
+            left:21%;
+            display: none;
+            z-index: 2;
+        }
+        #needdes{
+            height:50px;
+            width:200px;
+            font-size: 14px;
+            position: absolute;
+            top:0%;
+            left:38%;
+            display: none;
+            z-index: 2;
+        }
+        #dataconatiner{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(1,300px);
+            gap:20px;
+            width:70%;
+        }
+        #dataconatiner>div{
+            display: none;
+            border: 1px solid lightgrey;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        #dataconatiner>div:nth-child(1),#dataconatiner>div:nth-child(2),#dataconatiner>div:nth-child(3),#dataconatiner>div:nth-child(4){
+            display: grid;
+        }
+        #next{
+            position: absolute;
+            right:31%;
+            top:33%;
+            border-radius: 60%;
+            background-color: white;
+            font-size: 30px;
+        }
+        #prev{
+            position: absolute;
+            left: 0%;
+            top:33%;
+            border-radius: 50%;
+            font-size: 30px;
+            display: none;
+            z-index: 3;
+            background-color: white;
+        }
+        #rightone{
+            height:550px;
+            width:460px;
+            border:1px solid black;
+            position:absolute;
+            top:6.5%;
+            right:0%;
+            background-color: #f0f0f0;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        .header{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+.navbar{
+    width: 99vw;
+    height: fit-content;
+    margin: auto;
+}
+.navbar img{
+    width: 100%;
+    height: fit-content;
+    position: sticky;
+    left: 0;
+    top: 0;
+}
+.nav-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 99vw;
+    padding: 5px 0px;
+    margin: auto;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.nav-2 > div{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    justify-content: space-around;
+}
+.nav-2 > div > div , .nav-2 > div > p{
+    margin: 0px 15px;
+}
+
+.nav-2 > div > div:hover , .nav-2 > div > p:hover{
+    font-weight: 700;
+    border-bottom: 2px solid blue;
+    color: blue;
+}
+
+/* footer */
+.knowus{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: rgb(0,0,0);
+    color: white;
+    padding-top: 25px;
+    font-family: 'Titillium Web', sans-serif;
+}
+.knowus h3{
+    font-size: 17px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 700;
+}
+#porter{
+    font-size: 32px;
+}
+.knowus ul{
+    font-size: 14px;
+    width: 170px;
+    height: 170px;
+    text-align: start;
+    color: white;
+    list-style: none;
+}
+.porter li{
+    font-size: 22px;
+}
+.knowus li{
+    margin-bottom: 8px;
+    margin: 15px 0px;
+
+}
+.knowus li a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+.knowus li a:hover{
+    color: orange;
+}
+#dowapp{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+    align-items: flex-start;
+}
+#sociallink{
+    display: flex;
+    flex-direction: column;
+}
+#img-1, #img-2{
+     width: 200px;
+     height: 80px;
+}
+
+
+/* last-row */
+.last-foot{
+    background-color: rgb(0,0,0);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.last-foot img{
+    height: auto;
+}
+.last-foot:hover{
+    cursor: not-allowed;
+}
+#sociallink{
+    display: flex;
+    flex-direction: row;
+}
+#sociallink i{
+    width: 40px;
+    font-size: 25px;
+    color: white;
+    margin: 0px 30px;
+}
+.text{
+    color: white;
+}
+
+
+
+/* TRACKER */
+.screen-div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    width: 100vw;
+    height:90vh;
+}
+.track-order{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    height: 400px;
+    margin: auto;
+    margin-top: 200px;
+}
+.track-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+    align-items: center;
+    border-bottom: 1px solid rgb(196,196,196);
+    margin-top: 10px;
+}
+
+.track-head img, .caller-icon{
+    width: 20px;
+    height: 20px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+.inputs input{
+    width: 80%;
+    padding: 10px 15px;
+    margin: 20px auto;
+}
+.inputs button{
+    background-color: rgb(41,98,255);
+    color: white;
+    font-weight: 700;
+    border: none;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+
+.track-foot{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-top:  1px solid rgb(196,196,196);
+    padding: 15px 0px;
+}
+        
+    </style>
+</head>
+<body>
+    <!-- ,, -->
+    <div class="navbar">
+        <img src="./images/navbar full.png" alt="">
+    </div>
+    <div class="nav-2">
+        <div>
+            <div onclick="window.location.href='./index.html'">CITY TEMPO</div>
+            <div onclick="window.location.href='./packers.html'">PACKERS & MOVERS</div>
+            <div onclick="window.location.href='./driver.html'">DRIVER PARTNERS</div>
+            <div onclick="window.location.href='./enterprise.html'">FOR ENTERPRISE</div>
+        </div>
+        <div>
+            <p>Support</P>
+            <p class="track-btn">Track Order</p>
+        </div>
+        <!-- ss -->
+    </div>
+    <div id="src11"></div>
+    <div id="des11"></div>
+    <div id="estimate">
+        <div id="estimate1">
+        <div id="options">
+            <div id="close"><p>X</p></div>
+            <select id="optionvalue">
+            <option value="Maharashtra">MUMBAI</option>
+            <option value="Delhi">DELHI NCR</option>
+            <option value="Karnataka">BANGALORE</option>
+            <option value="Hyderabad">HYDERABAD</option>
+            <option value="Chennai">CHENNAI</option>
+            <option value="Gujarat">AHEMEDABAD</option>
+            <option value="Rajasthan">JAIPUR</option>
+            <option value="Maharashtra">PUNE</option>
+            <option value="West Bengal">KOLKATAI</option>
+            <option value="Gujarat">SURAT</option>
+            <option value="Uttar Pradesh">LUCKNOW</option>
+            <option value="Madhya Pradesh">INDORE</option>
+            <option value="Maharashtra">NAGPUR</option>
+            <option value="Punjab">CHANDIGARH</option>
+        </select></div>
+        <div id="srccont">
+        <input id="src" placeholder="Pick Up">
+        <!-- oninput="debouncing(main,'src','showsrc') -->
+        <div id="showsrc"></div>
+    </div>
+    <div id="descont">
+        <input id="des" placeholder="Drop Location" >
+        <!-- oninput="debouncing(main,'des','showdes')" -->
+        <div id="showdes"></div>
+    </div>
+    <div><button id="only"style="width:385px; height:100%; background-color: #2962ff; color:white; font-weight: bold; font-size: 18px; margin-top:0%; border:none">Get Estimate</button></div>
+    </div>
+    </div>
+    <div id="bottomdata">
+        <div id="leftone">
+            <div id="estidata"></div>
+            <h2 id="usrname"></h2>
+            <p style="font-size:19px; color:grey">Here is your trip fare estimate</p>
+            <button id="next"><i class="fas fa-angle-right"></i></button>
+            <button id="prev"><i class="fas fa-angle-left"></i></button>
+            <div id="dataconatiner"></div>
+        </div>
+        <div id="rightone">
+            <div>
+                <h1 style="text-align: center;">BOOK your PORTER</h1>
+                <div style="height:5px; width: 35px; background-color: #2962ff; margin-left:45%; position: absolute; top:8%"></div>
+             <p style="color:grey; position: relative;margin-top: 10px;">1:<p style="color:black;position: absolute; top:11.5%;left:5%;font-size: 19px; font-weight: bold">Download the Porter App</p></p> 
+             <div style="display:flex;margin-left: 20px;margin-top: 10px"><img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/android_badge-571c788a824c67c67eeaaf1e43b4b342a47dabf437fd10505f7cb6b2e143b6e7.svg" id="playstore" style="cursor:pointer"><img src="https://d3o1t8vp7n8wsg.cloudfront.net/assets/website_revamp/app_store_badge-d3af3c515f97748282983efa4a20036221824180a4b4a27ffe4b816ebbe4fb25.svg" id="appstore" style="cursor:pointer"></div>
+             <p style="color:grey; position: relative;margin-top: 10px;">2:<p style="color:black;position: absolute; top:29.5%;left:5%;font-size: 19px; font-weight: bold">Select pickup & destination</p></p>
+             <p style="margin-left:20px;margin-top: 10px">You can see the vehicles around you</p>
+             <p style="color:grey; position: relative; margin-top: 30px;">3:<p style="color:black;position: absolute; top:44.5%;left:5%;font-size: 19px; font-weight: bold"> Add your receiver details and book</p></p>
+             <p style="margin-left:20px;margin-top: 10px">Share your goods type and quantity</p>
+
+             <p style="margin-left:100px; margin-top: 50px; font-size: 19px; font-weight: bold;">For any other queries call CC</p>
+             <div><button style="background-color: #2962ff; color: #f0f0f0;font-weight: bold; height: 50px; width:180px;margin-left: 30%;">REQUEST CALLBACK</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <!-- imported -->
+        <div class="knowus" style="color: white;">
+            <div id="know">
+                <h3 id="porter">PORTER</h3>
+                <ul class="porter">
+                    <li>Send anything</li>
+                    <li>anywhere</li>
+                    <li>anytime</li>
+                </ul>
+            </div>
+            <div id="know2">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">offers</a></li>
+                    <li><a href="">Careers</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </div>
+            <div id="know3">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="">City Tempo</a></li>
+                    <li><a href="">For Enterprise</a></li>
+                    <li><a href="">Packers & Movers</a></li>
+                </ul>
+            </div>
+            <div id="know3">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="">Chat with us <i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="">Need Help?</a></li>
+                    <li><a href="">Terms of Service</a></li>
+                    <li><a href="">Insurance FAQs</a></li>
+                </ul>
+            </div>
+            <div id="know4">
+                <h3>Download App</h3>
+                <div id="dowapp">
+                    <img id="img-1"
+                        src="https://www.freepnglogos.com/uploads/play-store-logo-png/play-store-logo-nisi-filters-australia-11.png">
+                    <img id="img-2" src="https://www.vortex6.com/wp-content/uploads/2019/09/app-store.png">
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="knowus" style="color: white;">
+            <div id="know">
+                <h3>We are here</h3>
+                <ul>
+                    <li><a href="">Mumbai</a></li>
+                    <li><a href="">Ahmedabad</a></li>
+                    <li><a href="">Lucknow</a></li>
+                </ul>
+            </div>
+            <div id="know2">
+                <ul>
+                    <li><a href="">Delhi NCR</a></li>
+                    <li><a href="">Jaipur</a></li>
+                    <li><a href="">Coimbatore</a></li>
+                </ul>
+            </div>
+            <div id="know3">
+                <ul>
+                    <li><a href="">Bangalore</a></li>
+                    <li><a href="">Pune</a></li>
+                    <li><a href="">Indore</a></li>
+                </ul>
+            </div>
+            <div id="know3">
+                <ul>
+                    <li><a href="">Hyderabad</a></li>
+                    <li><a href="">Kolkata</a></li>
+                    <li><a href="">Nagpur</a></li>
+                </ul>
+            </div>
+            <div id="know3">
+                <ul>
+                    <li><a href="">Chennai</a></li>
+                    <li><a href="">Surat</a></li>
+                    <li><a href="">Chandihgarh</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="last-foot">
+            <div id="sociallink">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+
+            <div class="text">
+                <p>2021 SmartShift Logistics Solutions Pvt. Ltd.
+                    CIN: U74999MH2014PTC306120</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+<script>
+
+    
+    window.addEventListener("load",()=>{
+        let estimateData=JSON.parse(localStorage.getItem("estimationdata"))
+        console.log(estimateData)
+        console.log(estimateData[estimateData.length-1])
+        let toplocation=document.createElement("div")
+        toplocation.style.display="flex";
+        toplocation.style.justifyContent="space-between"
+        let srcbox=document.createElement("div")
+        let srcp1=document.createElement("p")
+        srcp1.style.fontSize="12px";
+        srcp1.innerText="Pick up Location";
+        let srcp2=document.createElement("p")
+        srcp2.innerText=estimateData[estimateData.length-1].src;
+        srcbox.append(srcp1,srcp2)
+        let srcbox2=document.createElement("div")
+        let desp1=document.createElement("p")
+        desp1.style.fontSize="12px";
+        desp1.innerText="Drop Location";
+        let des2=document.createElement("p")
+        des2.innerText=estimateData[estimateData.length-1].des;
+        srcbox2.append(desp1,des2)
+        let edit=document.createElement("buttton")
+        edit.innerText="Edit";
+        edit.style.color="blue";
+        edit.style.fontSize="20px"
+        edit.style.border="1px solid blue"
+        edit.style.height="30px";
+        edit.style.width="60px"
+        edit.style.textAlign="center";
+        edit.style.marginTop="15px";
+        edit.setAttribute("id","edit")
+        toplocation.append(srcbox,srcbox2,edit)
+        let br=document.createElement("hr")
+        br.style="1px solid black"
+        document.getElementById("estidata").append(toplocation,br)
+
+        document.getElementById("usrname").innerText=estimateData[estimateData.length-1].name;
+
+        appendtruckdata(estimateData)
+
+        document.getElementById("src").addEventListener("input",()=>{
+            document.getElementById("src11").style.display="none"
+            debouncing(main,'src','showsrc')
+            
+        })
+
+        document.getElementById("des").addEventListener("input",()=>{
+            document.getElementById("des11").style.display="none"
+            debouncing(main,'des','showdes')
+            
+        })
+
+        document.getElementById("only").addEventListener("click",()=>{
+            myva('src','des')
+        })
+
+        document.getElementById("edit").addEventListener("click",()=>{
+            document.getElementById("estimate").style.display="flex"
+        })
+
+        document.getElementById("close").addEventListener("click",()=>{
+            document.getElementById("estimate").style.display="none"
+        })
+
+
+        document.getElementById("next").addEventListener("click",()=>{
+            slideshow(estimateData)
+        })
+
+        document.getElementById("prev").addEventListener("click",()=>{
+            slideshowprev(estimateData)
+        })
+
+        document.getElementById("playstore").addEventListener("click",()=>{
+            window.location.href="https://play.google.com/store/apps/details?id=com.theporter.android.customerapp&referrer=web_tracking_id%253Df54d88075cfbe8c158a4417c85b7b91d";
+        })
+
+        document.getElementById("appstore").addEventListener("click",()=>{
+            window.location.href="https://porter.in/iphone-app";
+        })
+
+    })
+
+
+    let srcval=async(x)=>{
+    let value=document.getElementById(x).value;
+    let res=await fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${value}&format=json&limit=5&apiKey=faf6856ebd72424da06c7611025d1da6`)
+    let data=await res.json()
+    //console.log(data.results)
+    return data.results
+    // appendSrcdata(data.results)
+
+
+}
+let count=0;
+let appendSrcdata=(data,x,y)=>{
+    let statevalue=document.getElementById("optionvalue").value
+    document.getElementById(y).innerHTML="";
+    data.map((ele)=>{
+        //console.log(statevalue==ele.state)
+        if(ele.city==undefined||ele.state==undefined||ele.country==undefined)
+        {
+            return false
+        }
+        let box1=document.createElement("div")
+        box1.style.cursor="pointer";
+        box1.style.display="flex";
+        let p1=document.createElement("p")
+        let icon=document.createElement("i")
+        let view=document.createElement("view")
+        icon.setAttribute("class","fas fa-map-marker-alt")
+        view.append(icon)
+        p1.style.fontSize="15px";
+        p1.style.marginLeft="10px"
+        p1.innerText=`${ele.city}  ${ele.state}  ${ele.country}`
+        box1.append(view,p1)
+        box1.style.border="1px solid silver"
+        document.getElementById(y).append(box1)
+
+        box1.addEventListener("click",()=>{
+        
+        
+        if(statevalue==ele.state)
+        {
+            document.getElementById(x).value=ele.city
+            document.getElementById(y).style.display="none"
+            document.getElementById(x).style.border="none"
+            document.getElementById("outofbound").style.display="none"
+            document.getElementById("needsrc").style.display="none"
+            document.getElementById("needdes").style.display="none"
+            count=0;
+
+        }
+        else
+        {
+            document.getElementById(x).style.border="1px solid red"
+            let box22=document.createElement("div")
+            let p2=document.createElement("p")
+            p2.innerText="Location is not within city bounds"
+            p2.style.color="red";
+            box22.style.border="1px solid red";
+            box22.setAttribute("id","outofbound")
+            box22.style.display="block";
+            box22.append(p2)
+            document.body.append(box22)
+            count++
+        }
+        if(count>=2)
+        {
+            console.log(count)
+            alert("Please enter region within boundry")
+            window.location.reload();
+        }
+        
+        
+        })
+    })
+}
+
+
+let main=async(x,y)=>{
+
+    let srcdata =await srcval(x)
+    if(srcdata==undefined)
+    {
+        return false
+    }
+
+    appendSrcdata(srcdata,x,y)
+}
+
+let timerid;
+  function debouncing(data,x,y)
+    {
+        if(timerid!=undefined)
+        {
+            clearTimeout(timerid)
+        }
+        timerid=setTimeout(function(){
+            data(x,y)
+        },1000)
+    }
+
+
+    function myva(){
+
+    let src=document.getElementById("src").value
+    let des=document.getElementById("des").value
+
+    if(des!="" && src!="")
+    {
+        fetch(`https://www.distance24.org/route.json?stops=${src}|${des}`)
+    .then((res)=>res.json())
+    .then((data)=>{
+   // console.log(data)
+    console.log(data.stops[0].region,data.stops[0].countryCode,data.stops[1].region,data.stops[1].countryCode)
+    let xx=data.distances[0];
+    
+
+//    document.getElementById("show").innerHTML=`the distance between ${src} & ${des} is ${xx} kilometers`
+
+   fetch(`http://localhost:3000/porterdata`)
+    .then((res1)=>res1.json())
+    .then((data1)=>{
+        // console.log(data1)
+        // console.log(xx)
+        let usrname1=document.getElementById("usrname").innerText
+        if(xx<=150)
+        {
+            let estimationdata=[];
+
+            data1.map((ele)=>{
+                // console.log(ele.capacity>=500)
+                estimationdata.push(ele)
+            })
+
+            let obj={
+                currdistace:xx,
+                src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+                des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+                name:usrname1
+            }
+            estimationdata.push(obj)
+            localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+            window.location.href="./estimation.html"
+        }
+
+        if(xx>=150 && xx<=200)
+        {
+            let estimationdata=[];
+
+            data1.map((ele)=>{
+                if(ele.capacity>=500)
+                {
+                    estimationdata.push(ele)
+                }             
+            })
+            let obj={
+                currdistace:xx,
+                src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+                des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+                name:usrname1
+            }
+            estimationdata.push(obj)
+
+            localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+            window.location.href="./estimation.html"
+        }
+
+
+        if(xx>200)
+        {
+            let estimationdata=[];
+
+            data1.map((ele)=>{
+                if(ele.capacity>500)
+                {
+                    estimationdata.push(ele)
+                }             
+            })
+            let obj={
+                currdistace:xx,
+                src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+                des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+                name:usrname1
+            }
+            estimationdata.push(obj)
+            
+            localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+            
+        }
+    })
+})
+
+
+    }
+    if(src=="")
+    {
+        document.getElementById("src").style.border="1px solid red";
+        let box22=document.createElement("div")
+            let p2=document.createElement("p")
+            p2.innerText="Enter source"
+            p2.style.color="red";
+            box22.style.border="1px solid red";
+            box22.setAttribute("id","needsrc")
+            box22.style.display="block";
+            box22.append(p2)
+            document.getElementById("src11").append(box22)
+    }
+
+    if(des=="")
+    {
+        document.getElementById("des").style.border="1px solid red";
+        let box22=document.createElement("div")
+        box22.setAttribute("class","childdivs")
+            let p2=document.createElement("p")
+            p2.innerText="Enter destination"
+            p2.style.color="red";
+            box22.style.border="1px solid red";
+            box22.setAttribute("id","needdes")
+            box22.style.display="block";
+            box22.append(p2)
+            document.getElementById("des11").append(box22)
+    }
+}
+
+
+function appendtruckdata(data2)
+{
+    data2.map((ele,ind)=>{
+        if(ind==data2.length-1)
+        {
+            return
+        }
+        let boxy=document.createElement("div")
+        let py=document.createElement("h3")
+        py.innerText=ele.name;
+        py.style.fontSize="16px"
+        let hy=document.createElement("h2")
+        let dis=data2[data2.length-1].currdistace;
+        let km=ele.km_price;
+        let base=ele.price;
+        let mysum=Math.floor((km*dis)+base);
+        hy.innerText=`₹ ${mysum}`
+        hy.style.fontSize="25px"
+        let img=document.createElement("img")
+        img.src=ele.img_url;
+        img.style.width="110px";
+        img.style.width="80px";
+        let py2=document.createElement("p")
+        py2.innerText=`Capacity:${ele.capacity}`;
+        let py3=document.createElement("p")
+        py3.innerText=`Size (LxBxH):${ele.size}`;
+        boxy.append(py,hy,img,py2,py3)
+        document.getElementById("dataconatiner").append(boxy)
+    })
+}
+
+let item=3
+
+function slideshow(data){
+    if(item==data.length)
+    {
+        item=4
+    }
+    else
+    {
+        item++;
+        document.getElementById("prev").style.display="block";
+    }
+showitem()
+}
+
+function slideshowprev(data){
+    if(item==4)
+    {
+        item=data.length;
+    }
+    else
+    {
+        item--;
+    }
+    showitem1()
+}
+
+function showitem(data)
+{
+    let value=document.querySelectorAll("#dataconatiner > div")
+    for(let i=0;i<value.length;i++)
+    {
+        if(i==item)
+        {
+            value[i].style.display="grid";
+            value[i-4].style.display="none";
+            console.log(i,(i-4))
+        }
+    }
+}
+function showitem1(data)
+{
+    let value=document.querySelectorAll("#dataconatiner > div")
+    for(let i=0;i<value.length;i++)
+    {
+        if(i==item)
+        {
+            value[i-4].style.display="grid";
+            value[i].style.display="none";
+            console.log(i,(i-4))
+        }
+    }
+}
+// let count11=-1;
+// function slideshow(data33){
+//     count11++;
+//     let item=document.querySelectorAll("#dataconatiner > div")
+//     let xx=3+count11;
+//     console.log(count11,xx)
+//     if(xx>=data33.length-1)
+//     {
+//         count11=0;
+//          xx=3;
+//          document.getElementById("next").style.display="none";
+//          return      
+//     }
+
+//     // console.log(item[count11-1],"hello")
+//     if(count11>0)
+//     {
+//         item[count11-1].style.display="none"
+//     }
+    
+//     for(let i=count11;i<=xx;i++)
+//     {
+//         item[i].style.display="grid"
+//         console.log(item[i])
+//     }
+//     document.getElementById("prev").style.display="block";
+
+// }
+
+// function slideshowprev(estimateData){
+//     let min=count11-1;
+//     let max=count11+2
+//     let item=document.querySelectorAll("#dataconatiner > div")
+//     if(count11<=estimateData.length)
+//     {
+//         item[count11+3].style.display="none"
+//     }
+    
+//     for(let i=min;i<=max;i++)
+//     {
+//         item[i].style.display="grid"
+//     }
+// }
+</script>
