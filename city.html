@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+        }
+        #outofbound{
+            height:50px;
+            width:160px;
+            font-size: 14px;
+            position: absolute;
+            top:-100%;
+            left:30%;
+            display: none;
+        }
+        #needmob{
+            height:50px;
+            width:160px;
+            font-size: 14px;
+            position: absolute;
+            top:-100%;
+            left:45%;
+            display: none;
+        }
+        #needsrc{
+            height:50px;
+            width:160px;
+            font-size: 14px;
+            position: absolute;
+            top:-100%;
+            left:23%;
+            display: none;
+        }
+        #needdes{
+            height:50px;
+            width:160px;
+            font-size: 14px;
+            position: absolute;
+            top:-100%;
+            left:34%;
+            display: none;
+        }
+        view{
+            margin-top: 10%;
+        }
+        #estimate{
+            display: flex;
+            border: solid 1px black;
+            width:70%;
+            height:60px;
+            margin: auto;
+            margin-top: 20%;
+        }
+        #estimate>div{
+            border: 1px solid lightgray
+        }
+        #estimate>div>p{
+            font-size: 12px;
+        }
+        #estimate>div>input,#estimate>div>select,#estimate>div>div>input{
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="src11"></div>
+    <div id="des11"></div>
+    <div id="mob11"></div>
+    <div id="estimate">
+        <div id="options">
+            <p>City</p>
+            <select id="optionvalue">
+            <option value="Maharashtra">MUMBAI</option>
+            <option value="Delhi">DELHI NCR</option>
+            <option value="Karnataka">BANGALORE</option>
+            <option value="Hyderabad">HYDERABAD</option>
+            <option value="Chennai">CHENNAI</option>
+            <option value="Gujarat">AHEMEDABAD</option>
+            <option value="Rajasthan">JAIPUR</option>
+            <option value="Maharashtra">PUNE</option>
+            <option value="West Bengal">KOLKATAI</option>
+            <option value="Gujarat">SURAT</option>
+            <option value="Uttar Pradesh">LUCKNOW</option>
+            <option value="Madhya Pradesh">INDORE</option>
+            <option value="Maharashtra">NAGPUR</option>
+            <option value="Punjab">CHANDIGARH</option>
+        </select></div>
+        <div id="srccont">
+            <p>PickUp Address</p>
+        <input id="src" placeholder="Enter PickUp Address">
+        <!-- oninput="debouncing(main,'src','showsrc') -->
+        <div id="showsrc"></div>
+    </div>
+    <div id="descont">
+        <p>DropOff Address</p>
+        <input id="des" placeholder="Enter Dropoff Address" >
+        <!-- oninput="debouncing(main,'des','showdes')" -->
+        <div id="showdes"></div>
+    </div>
+    <div id="mobile" style="position:relative">
+        <p>Mobile Number</p>
+        <div style="display:flex">
+            <input id="mobnum" placeholder="+91-&nbsp &nbsp &nbsp &nbsp Mobile Number" style="height:15px; "></div>
+       
+    </div>
+    <div>
+        <input placeholder="Name(Optonal)" style="margin-top: 15%;" id="name">
+    </div>
+    <div id="requirement">
+        <p>Requirement</p>
+        <select>
+            <option value="PERSONAL">PERSONAL</option>
+            <option value="BUSINESS">BUSINESS</option>
+            <option value="HOUSE">HOUSE SHIFITING</option>
+        </select>
+    </div>
+    <div><button id="only"style="width:100%; height:35px; background-color: #2962ff; color:white; font-weight: bold; font-size: 18px; margin-top:10%;">Get Estimate</button></div>
+    
+</div>
+<h1 id="show"></h1>
+
+    
+</body>
+</html>
+
+<script type="module">
+
+    window.addEventListener("load",()=>{
+        document.getElementById("src").addEventListener("input",()=>{
+            document.getElementById("src11").style.display="none"
+            debouncing(main,'src','showsrc')
+        })
+
+        document.getElementById("des").addEventListener("input",()=>{
+            document.getElementById("des11").style.display="none"
+            debouncing(main,'des','showdes')
+        })
+
+        document.getElementById("only").addEventListener("click",()=>{
+            document.getElementById("mob11").style.display="none"
+            myva()
+        })
+    })
+let srcval=async(x)=>{
+    let value=document.getElementById(x).value;
+    let res=await fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${value}&format=json&limit=5&apiKey=faf6856ebd72424da06c7611025d1da6`)
+    let data=await res.json()
+    //console.log(data.results)
+    return data.results
+    // appendSrcdata(data.results)
+
+
+}
+let count=0;
+let appendSrcdata=(data,x,y)=>{
+    let statevalue=document.getElementById("optionvalue").value
+    document.getElementById(y).innerHTML="";
+    data.map((ele)=>{
+        //console.log(statevalue==ele.state)
+        if(ele.city==undefined||ele.state==undefined||ele.country==undefined)
+        {
+            return false
+        }
+        let box1=document.createElement("div")
+        box1.style.cursor="pointer";
+        box1.style.display="flex";
+        let p1=document.createElement("p")
+        let icon=document.createElement("i")
+        let view=document.createElement("view")
+        icon.setAttribute("class","fas fa-map-marker-alt")
+        view.append(icon)
+        p1.style.fontSize="15px";
+        p1.style.marginLeft="10px"
+        p1.innerText=`${ele.city}  ${ele.state}  ${ele.country}`
+        box1.append(view,p1)
+        document.getElementById(y).append(box1)
+
+        box1.addEventListener("click",()=>{
+        
+        
+        if(statevalue==ele.state)
+        {
+            document.getElementById(x).value=ele.city
+            document.getElementById(y).style.display="none"
+            document.getElementById(x).style.border="none"
+            document.getElementById("outofbound").style.display="none"
+            document.getElementById("needsrc").style.display="none"
+            document.getElementById("needdes").style.display="none"
+            count=0;
+
+        }
+        else
+        {
+            document.getElementById(x).style.border="1px solid red"
+            let box22=document.createElement("div")
+            let p2=document.createElement("p")
+            p2.innerText="Location is not within city bounds"
+            p2.style.color="red";
+            box22.style.border="1px solid red";
+            box22.setAttribute("id","outofbound")
+            box22.style.display="block";
+            box22.append(p2)
+            document.body.append(box22)
+            count++
+        }
+        if(count>=2)
+        {
+            console.log(count)
+            alert("Please enter region within boundry")
+            window.location.reload();
+        }
+        
+        
+        })
+    })
+}
+
+
+let main=async(x,y)=>{
+
+    let srcdata =await srcval(x)
+    if(srcdata==undefined)
+    {
+        return false
+    }
+
+    appendSrcdata(srcdata,x,y)
+}
+
+let timerid;
+  function debouncing(data,x,y)
+    {
+        if(timerid!=undefined)
+        {
+            clearTimeout(timerid)
+        }
+        timerid=setTimeout(function(){
+            data(x,y)
+        },1000)
+    }
+
+
+    function myva(){
+
+    let src=document.getElementById("src").value
+    let des=document.getElementById("des").value
+    let mob=document.getElementById("mobnum").value
+
+    if(mob!="" && des!="" && src!="")
+    {
+        fetch(`https://www.distance24.org/route.json?stops=${src}|${des}`)
+    .then((res)=>res.json())
+    .then((data)=>{
+   // console.log(data)
+    console.log(data.stops[0].region,data.stops[0].countryCode,data.stops[1].region,data.stops[1].countryCode)
+    let xx=data.distances[0];
+    
+
+//    document.getElementById("show").innerHTML=`the distance between ${src} & ${des} is ${xx} kilometers`
+
+   fetch(`http://localhost:3000/porterdata`)
+    .then((res1)=>res1.json())
+    .then((data1)=>{
+        // console.log(data1)
+        // console.log(xx)
+        if(xx<=150)
+        {
+            let estimationdata=[];
+
+            data1.map((ele)=>{
+                // console.log(ele.capacity>=500)
+                estimationdata.push(ele)
+            })
+
+            let obj={
+                currdistace:xx,
+                src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+                des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+                name:`Hello ${document.getElementById("name").value}`
+            }
+            estimationdata.push(obj)
+            localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+            window.location.href="./estimation.html"
+        }
+
+        if(xx>=150 && xx<=200)
+        {
+            let estimationdata=[];
+
+            data1.map((ele)=>{
+                if(ele.capacity>=500)
+                {
+                    estimationdata.push(ele)
+                }             
+            })
+            let obj={
+                currdistace:xx,
+                src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+                des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+                name:`Hello ${document.getElementById("name").value}`
+            }
+            estimationdata.push(obj)
+
+            localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+            window.location.href="./estimation.html"
+        }
+
+
+        if(xx>200)
+        {
+            let estimationdata=[];
+
+            data1.map((ele)=>{
+                if(ele.capacity>500)
+                {
+                    estimationdata.push(ele)
+                }             
+            })
+            let obj={
+                currdistace:xx,
+                src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+                des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+                name:`Hello ${document.getElementById("name").value}`
+            }
+            estimationdata.push(obj)
+            
+            localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+            
+        }
+    })
+})
+
+
+    }
+    if(mob=="")
+    {
+        document.getElementById("mobnum").style.border="1px solid red";
+        let box22=document.createElement("div")
+            let p2=document.createElement("p")
+            p2.innerText="Enter your Mobile Number"
+            p2.style.color="red";
+            box22.style.border="1px solid red";
+            box22.setAttribute("id","needmob")
+            box22.style.display="block";
+            box22.append(p2)
+            document.getElementById("mob11").append(box22)
+    }
+    if(src=="")
+    {
+        document.getElementById("src").style.border="1px solid red";
+        let box22=document.createElement("div")
+            let p2=document.createElement("p")
+            p2.innerText="Enter source"
+            p2.style.color="red";
+            box22.style.border="1px solid red";
+            box22.setAttribute("id","needsrc")
+            box22.style.display="block";
+            box22.append(p2)
+            document.getElementById("src11").append(box22)
+    }
+
+    if(des=="")
+    {
+        document.getElementById("des").style.border="1px solid red";
+        let box22=document.createElement("div")
+            let p2=document.createElement("p")
+            p2.innerText="Enter destination"
+            p2.style.color="red";
+            box22.style.border="1px solid red";
+            box22.setAttribute("id","needdes")
+            box22.style.display="block";
+            box22.append(p2)
+            document.getElementById("des11").append(box22)
+    }
+
+}
+
+</script>
+
+
