@@ -990,7 +990,8 @@ let appendSrcdata=(data,x,y)=>{
             box22.setAttribute("id","outofbound")
             box22.style.display="block";
             box22.append(p2)
-            document.body.append(box22)
+            // document.body.append(box22)
+            document.getElementById("src11").append(box22)
             count++
         }
         if(count>=2)
@@ -1115,6 +1116,7 @@ let timerid;
             estimationdata.push(obj)
             
             localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+            window.location.href="./estimation.html"
             
         }
     })
