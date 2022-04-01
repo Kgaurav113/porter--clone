@@ -67,12 +67,14 @@ body{
     justify-content: center;
     align-items: center;
     width: fit-content;
-    height:500px ;
+    height:550px ;
     position: absolute;
     right: 60px; 
-    top: 180px;
+    top: 160px;
     padding: 10px;
     text-align: center;
+    /* border: 1px solid red; */
+    background-color: white;
 }
 .entries img{
     width:180px ;
@@ -82,15 +84,20 @@ body{
     font-size: 22px;
     margin: 10px;
     font-weight: 700;
+ 
 }
-form{
-    display: flex;
+
+
+
+/* .entries>div{
+    /* display: flex;
     flex-direction: column;
     width: fit-content;
     background-color: white;
-    padding: 15px 10px 15px 10px;
-}
-form input{
+    padding: 15px 10px 15px 10px; */
+
+
+.entries>div>input,.entries>div>select,.entries>div>div>input{
     padding: 10px 130px 10px 10px;
     margin: 10px;
 }
@@ -354,4 +361,98 @@ form button{
     align-items: center;
     border-top:  1px solid rgb(196,196,196);
     padding: 15px 0px;
+}
+
+
+                         /* @media screen */
+
+@media screen and (max-width: 800px) { 
+    body{
+        width: 800px;
+        height: fit-content;
+        overflow-x: hidden;
+        font-family: 'Titillium Web', sans-serif;
+    }
+    .all{
+        width: 800px;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        overflow: hidden;
+    }
+    .navbar{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .nav-2{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: fit-content;
+    }
+    .driver-poster{
+        display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    }
+    .driver-poster img{
+        display: none;
+    }
+    .text{
+        display: none;
+    }
+    .entries{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        text-align: center;
+        position: relative;
+        top: 30px;
+        margin: 20px auto;
+    }
+    .benefits{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .benefits img{
+        width: 100%;
+        margin: 0px;
+    }
+    .fitt{
+        display: none;
+    }
+
+
+
+
+    .footer{
+        width: 100%;
+        margin: auto;
+    }
+    #know3{
+        display: none;
+    }
+    .last-foot{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .last-foot > div{
+       margin: 20px auto;
+    }
+
+    #showsrc,#showdes{
+        background-color: white;
+        z-index: 3;
+    }
+
+
 }
