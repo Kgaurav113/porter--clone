@@ -27,7 +27,7 @@
             <div onclick="window.location.href='./enterprise.html'">FOR ENTERPRISE</div>
         </div>
         <div>
-            <P>Support</P>
+            <p  onclick="window.location.href='./support.html'">Support</p>
             <P class="track-btn">Track Order</P>
         </div>
     </div>
@@ -41,7 +41,7 @@
    <div class="poster-scrrenshot">
   <img src="./images/poster.png" alt="">
    </div>
-   <form>
+   <form id="submitform">
     <h3>FOR ENTERPRISES</h3>
     <input type="text" placeholder="Select Cities">
     <input type="number" placeholder="+91-">
@@ -50,9 +50,9 @@
     <input type="text" placeholder="Monthly Trips">
     <input type="text" placeholder="Email Address">
     <input type="text" placeholder="Contact Designation">
-    <button type="submit">REQUEST CALLBACK</button>
+    <input type="submit" value="REQUEST CALL BACK" id="submit11">
    </form>
-
+   <div id="showthank"></div>
    <div class="cities">
         <h3>WE ARE TRANSFORMING CITIES</h3>
         <div class="hr"></div>
@@ -167,7 +167,7 @@
         <h3>FOR ANY MORE QUERY</h3>
         <div class="hr"></div>
         <p>Reach us out on9667309777today to know more about us and get benefits from our managed services offering. Our expert team will be happy to know more about your business and recommend the best possible solutions tailored to your logistics needs.</p>
-        <button>REQUEST CALLBACK</button>
+        <button onclick="window.location.href='./enterprise.html'">REQUEST CALLBACK</button>
     </div>
 </div>
 
@@ -412,41 +412,41 @@
         </div>
         
         
-        <div class="knowus" style="color: white;">
+        <div class="knowus" style="color: white; cursor: pointer;">
         <div id="know">
             <h3>We are here</h3>
             <ul>
-                <li><a href="">Mumbai</a></li>
-                <li><a href="">Ahmedabad</a></li>
-                <li><a href="">Lucknow</a></li>
+                <li onclick="setcity('mumbai')">Mumbai</li>
+                <li onclick="setcity('ahmedabad')">Ahmedabad</li>
+                <li onclick="setcity('lucknow')">Lucknow</li>
             </ul>
         </div>
         <div id="know2">
             <ul>
-                <li><a href="">Delhi NCR</a></li>
-                <li><a href="">Jaipur</a></li>
-                <li><a href="">Coimbatore</a></li>
+                <li onclick="setcity('delhi')">Delhi NCR</li>
+                <li  onclick="setcity('jaipur')">Jaipur</li>
+                <li onclick="setcity('coimbtore')">Coimbatore</li>
             </ul>
         </div>
         <div id="know3">
             <ul>
-                <li><a href="">Bangalore</a></li>
-                <li><a href="">Pune</a></li>
-                <li><a href="">Indore</a></li>
+                <li onclick="setcity('banglore')">Bangalore</li>
+                <li onclick="setcity('pune')">Pune</li>
+                <li onclick="setcity('indore')">Indore</li>
             </ul>
         </div>
         <div id="know3">
             <ul>
-                <li><a href="">Hyderabad</a></li>
-                <li><a href="">Kolkata</a></li>
-                <li><a href="">Nagpur</a></li>
+                <li  onclick="setcity('hydrabad')">Hyderabad</li>
+                <li  onclick="setcity('kolkata')">Kolkata</li>
+                <li onclick="setcity('nagpur')">Nagpur</li>
             </ul>
         </div>
         <div id="know3">
             <ul>
-                <li><a href="">Chennai</a></li>
-                <li><a href="">Surat</a></li>
-                <li><a href="">Chandihgarh</a></li>
+                <li onclick="setcity('chennai')">Chennai</li>
+                <li onclick="setcity('surat')">Surat</li>
+                <li onclick="setcity('chandigarh')">Chandihgarh</li>
             </ul>
         </div>
         
@@ -557,4 +557,36 @@ document.getElementById("nagpur").addEventListener("click",()=>{
 document.getElementById("chandigarh").addEventListener("click",()=>{
     setcity("chandigarh")
 })
+
+
+//added
+
+document.getElementById("submitform").addEventListener("submit",()=>{
+        thankdiv(event)
+    })
+
+
+    let thankdiv=(event)=>{
+        event.preventDefault();
+
+        let boxy11=document.createElement("div")
+        let p=document.createElement("p")
+        p.innerText="THANK YOU FOR REGISTRATION";
+        p.style.fontSize="22px";
+        p.style.fontWeight="medium"
+        let p3=document.createElement("p")
+        p3.innerText="We will get back to you shortly";
+        p3.style.fontSize="18px";
+        let butt=document.createElement("button")
+        butt.innerText="REGISTER MORE";
+        butt.setAttribute("id","insibut")
+        butt.addEventListener("click",()=>{
+            window.location.href="./enterprise.html"
+        })
+        boxy11.append(p,p3,butt)
+        document.getElementById("showthank").append(boxy11)
+        document.getElementById("showthank").style.display="block";
+
+
+    }
 </script>

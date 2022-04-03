@@ -20,6 +20,7 @@
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/976e422f89.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/976e422f89.js" crossorigin="anonymous"></script>
+    <script src="./localobj.js"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
             <div onclick="window.location.href='./enterprise.html'">FOR ENTERPRISE</div>
         </div>
         <div>
-            <p>Support</P>
+            <p onclick="window.location.href='./support.html'">Support</P>
             <p class="track-btn">Track Order</p>
         </div>
     </div>
@@ -78,7 +79,7 @@
         <div id="chalbox"> <div id="src11"></div>
         <div id="des11"></div>
         <div id="mob11"></div>
-        <div id="estimate">
+        <di id="estimate">
             <div id="options">
                 <p>City</p>
                 <select id="optionvalue">
@@ -126,7 +127,7 @@
                 <option value="HOUSE">HOUSE SHIFITING</option>
             </select>
         </div>
-        <div><button id="only"style="width:180px; height:68px; background-color: #2962ff; color:white; font-weight: bold; font-size: 18px; margin-top:0%;">Get Estimate</button></div>
+        <div><button id="only">Get Estimate</button></div>
         
     </div></div>
        
@@ -709,8 +710,9 @@
                 <div class="inputs">
                     <input type="text" placeholder="CRN">
                     <input type="text" placeholder="+91-">
-                    <button>TRACK ORDER</button>
+                    <button onclick="coneectback()">TRACK ORDER</button>
                 </div>
+                
                 <div class="track-foot">
                     <p>For Packers & Movers related query, br
                        <br> call us at <a>022 4410 4444</a></p>
@@ -718,6 +720,7 @@
                 </div>
             </div>
         </div>
+        <div id="finalmessage"></div>
 
 
         </div>
@@ -774,41 +777,41 @@
             </div>
 
 
-            <div class="knowus" style="color: white;">
+            <div class="knowus" style="color: white; cursor: pointer;">
                 <div id="know">
                     <h3>We are here</h3>
                     <ul>
-                        <li><a href="">Mumbai</a></li>
-                        <li><a href="">Ahmedabad</a></li>
-                        <li><a href="">Lucknow</a></li>
+                        <li onclick="setcity('mumbai')">Mumbai</li>
+                        <li onclick="setcity('ahmedabad')">Ahmedabad</li>
+                        <li onclick="setcity('lucknow')">Lucknow</li>
                     </ul>
                 </div>
                 <div id="know2">
                     <ul>
-                        <li><a href="">Delhi NCR</a></li>
-                        <li><a href="">Jaipur</a></li>
-                        <li><a href="">Coimbatore</a></li>
+                        <li onclick="setcity('delhi')">Delhi NCR</li>
+                        <li  onclick="setcity('jaipur')">Jaipur</li>
+                        <li onclick="setcity('coimbtore')">Coimbatore</li>
                     </ul>
                 </div>
                 <div id="know3">
                     <ul>
-                        <li><a href="">Bangalore</a></li>
-                        <li><a href="">Pune</a></li>
-                        <li><a href="">Indore</a></li>
+                        <li onclick="setcity('banglore')">Bangalore</li>
+                        <li onclick="setcity('pune')">Pune</li>
+                        <li onclick="setcity('indore')">Indore</li>
                     </ul>
                 </div>
                 <div id="know3">
                     <ul>
-                        <li><a href="">Hyderabad</a></li>
-                        <li><a href="">Kolkata</a></li>
-                        <li><a href="">Nagpur</a></li>
+                        <li  onclick="setcity('hydrabad')">Hyderabad</li>
+                        <li  onclick="setcity('kolkata')">Kolkata</li>
+                        <li onclick="setcity('nagpur')">Nagpur</li>
                     </ul>
                 </div>
                 <div id="know3">
                     <ul>
-                        <li><a href="">Chennai</a></li>
-                        <li><a href="">Surat</a></li>
-                        <li><a href="">Chandihgarh</a></li>
+                        <li onclick="setcity('chennai')">Chennai</li>
+                        <li onclick="setcity('surat')">Surat</li>
+                        <li onclick="setcity('chandigarh')">Chandihgarh</li>
                     </ul>
                 </div>
 
@@ -860,6 +863,22 @@
         console.log("close")
         tracker.style.display = "none"
     })
+
+    function coneectback()
+    {
+        tracker.style.display = "none";
+        document.getElementById("finalmessage").innerHTML="";
+        let h2=document.createElement("h2")
+        h2.innerText="We have sent the details to your registred mobile number";
+        // let button332=document.createElement("button");
+        // button332.innerText="CONTINUE";
+        document.getElementById("finalmessage").append(h2)
+        document.getElementById("finalmessage").style.display="block";
+        document.getElementById("finalmessage").addEventListener("click",()=>{
+            document.getElementById("finalmessage").style.display="none";
+        })
+    }
+
 
     /* CITIES */
 
@@ -949,6 +968,7 @@ let appendSrcdata=(data,x,y)=>{
         //console.log(statevalue==ele.state)
         if(ele.city==undefined||ele.state==undefined||ele.country==undefined)
         {
+            console.log("hello")
             return false
         }
         let box1=document.createElement("div")
@@ -963,6 +983,7 @@ let appendSrcdata=(data,x,y)=>{
         p1.style.marginLeft="10px"
         p1.innerText=`${ele.city}  ${ele.state}  ${ele.country}`
         box1.append(view,p1)
+        box1.style.borderBottom="1px solid silver"
         document.getElementById(y).append(box1)
 
         box1.addEventListener("click",()=>{
@@ -971,6 +992,7 @@ let appendSrcdata=(data,x,y)=>{
         if(statevalue==ele.state)
         {
             document.getElementById(x).value=ele.city
+            console.log(document.getElementById(x).value)
             document.getElementById(y).style.display="none"
             document.getElementById(x).style.border="none"
             document.getElementById("outofbound").style.display="none"
@@ -1037,6 +1059,8 @@ let timerid;
     let des=document.getElementById("des").value
     let mob=document.getElementById("mobnum").value
 
+    console.log(src)
+    console.log(des)
     if(mob!="" && des!="" && src!="")
     {
         fetch(`https://www.distance24.org/route.json?stops=${src}|${des}`)
@@ -1049,12 +1073,9 @@ let timerid;
 
 //    document.getElementById("show").innerHTML=`the distance between ${src} & ${des} is ${xx} kilometers`
 
-   fetch(`http://localhost:3000/porterdata`)
-    .then((res1)=>res1.json())
-    .then((data1)=>{
-        // console.log(data1)
-        // console.log(xx)
-        if(xx<=150)
+   let data1=JSON.parse(localStorage.getItem("vechiledeatils"))
+
+       if(xx<=150)
         {
             let estimationdata=[];
 
@@ -1074,7 +1095,7 @@ let timerid;
             window.location.href="./estimation.html"
         }
 
-        if(xx>=150 && xx<=200)
+        if(xx>150 && xx<=200)
         {
             let estimationdata=[];
 
@@ -1119,8 +1140,85 @@ let timerid;
             window.location.href="./estimation.html"
             
         }
-    })
+
+
+
+//    fetch(`http://localhost:3000/porterdata`)
+//     .then((res1)=>res1.json())
+//     .then((data1)=>{
+//         // console.log(data1)
+//         // console.log(xx)
+//         if(xx<=150)
+//         {
+//             let estimationdata=[];
+
+//             data1.map((ele)=>{
+//                 // console.log(ele.capacity>=500)
+//                 estimationdata.push(ele)
+//             })
+
+//             let obj={
+//                 currdistace:xx,
+//                 src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+//                 des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+//                 name:`Hello ${document.getElementById("name").value}`
+//             }
+//             estimationdata.push(obj)
+//             localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+//             window.location.href="./estimation.html"
+//         }
+
+//         if(xx>150 && xx<=200)
+//         {
+//             let estimationdata=[];
+
+//             data1.map((ele)=>{
+//                 if(ele.capacity>=500)
+//                 {
+//                     estimationdata.push(ele)
+//                 }             
+//             })
+//             let obj={
+//                 currdistace:xx,
+//                 src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+//                 des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+//                 name:`Hello ${document.getElementById("name").value}`
+//             }
+//             estimationdata.push(obj)
+
+//             localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+//             window.location.href="./estimation.html"
+//         }
+
+
+//         if(xx>200)
+//         {
+//             let estimationdata=[];
+
+//             data1.map((ele)=>{
+//                 if(ele.capacity>500)
+//                 {
+//                     estimationdata.push(ele)
+//                 }             
+//             })
+//             let obj={
+//                 currdistace:xx,
+//                 src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+//                 des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+//                 name:`Hello ${document.getElementById("name").value}`
+//             }
+//             estimationdata.push(obj)
+            
+//             localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+//             window.location.href="./estimation.html"
+            
+//         }
+//     })
+//     .catch((err)=>console.log(err1))
+
 })
+.catch((err1)=>console.log(err1))
+
 
 
     }

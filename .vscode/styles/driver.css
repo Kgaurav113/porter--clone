@@ -394,3 +394,39 @@ form button{
     border-top:  1px solid rgb(196,196,196);
     padding: 15px 0px;
 }
+
+#submitform{
+    position: relative;
+}
+#showthank{
+    display: none;
+    z-index: 5;
+    background-color: white;
+    height:440px;
+    width:370px;
+    position: absolute;
+    top:-10%;
+    padding: 100px;
+}
+
+#submit11{
+    padding-left: 33%;
+    color: #4568DC;
+    background-color: white;
+    border: 1px solid blue;
+}
+
+#submit11:hover{
+    color: white;
+    background-color: #4568DC;
+}
+#insibut{
+    color: #4568DC;
+    background-color: white;
+    border: 1px solid blue;
+}
+#insibut:hover{
+    color: white;
+    background-color: #4568DC;
+}
+

@@ -19,6 +19,7 @@
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/976e422f89.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/976e422f89.js" crossorigin="anonymous"></script>
+    <script src="./localobj.js"></script>
     <title>Document</title>
     <style>
         #body{
@@ -128,8 +129,8 @@
             background-color: white;
         }
         #rightone{
-            height:550px;
-            width:460px;
+            height:540px;
+            width:400px;
             border:1px solid black;
             position:absolute;
             top:9%;
@@ -334,6 +335,9 @@
     border-top:  1px solid rgb(196,196,196);
     padding: 15px 0px;
 }
+#callbackmessage{
+    color:green;
+}
         
     </style>
 </head>
@@ -411,7 +415,8 @@
              <p style="margin-left:20px;margin-top: 10px">Share your goods type and quantity</p>
 
              <p style="margin-left:100px; margin-top: 50px; font-size: 19px; font-weight: bold;">For any other queries call CC</p>
-             <div><button style="background-color: #2962ff; color: #f0f0f0;font-weight: bold; height: 50px; width:180px;margin-left: 30%;">REQUEST CALLBACK</button></div>
+             <div id="requestcall"><button style="background-color: #2962ff; color: #f0f0f0;font-weight: bold; height: 50px; width:180px;margin-left: 30%;">REQUEST CALLBACK</button></div>
+             <p id="callbackmessage"></p>
             </div>
         </div>
     </div>
@@ -466,35 +471,42 @@
         </div>
 
 
-        <div class="knowus" style="color: white;">
+        <div class="knowus" style="color: white; cursor: pointer;">
             <div id="know">
                 <h3>We are here</h3>
-                <ul>
-                    <li><a href="">Mumbai</a></li>
-                    <li><a href="">Ahmedabad</a></li>
-                    <li><a href="">Lucknow</a></li>
-                </ul>
-            </div>
-            <div id="know2">
-                <ul>
-                    <li><a href="">Delhi NCR</a></li>
-                    <li><a href="">Jaipur</a></li>
-                    <li><a href="">Coimbatore</a></li>
-                </ul>
-            </div>
-            <div id="know3">
-                <ul>
-                    <li><a href="">Bangalore</a></li>
-                    <li><a href="">Pune</a></li>
-                    <li><a href="">Indore</a></li>
-                </ul>
-            </div>
-            <div id="know3">
-                <ul>
-                    <li><a href="">Hyderabad</a></li>
-                    <li><a href="">Kolkata</a></li>
-                    <li><a href="">Nagpur</a></li>
-                </ul>
+                    <ul>
+                        <li onclick="setcity('mumbai')">Mumbai</li>
+                        <li onclick="setcity('ahmedabad')">Ahmedabad</li>
+                        <li onclick="setcity('lucknow')">Lucknow</li>
+                    </ul>
+                </div>
+                <div id="know2">
+                    <ul>
+                        <li onclick="setcity('delhi')">Delhi NCR</li>
+                        <li  onclick="setcity('jaipur')">Jaipur</li>
+                        <li onclick="setcity('coimbtore')">Coimbatore</li>
+                    </ul>
+                </div>
+                <div id="know3">
+                    <ul>
+                        <li onclick="setcity('banglore')">Bangalore</li>
+                        <li onclick="setcity('pune')">Pune</li>
+                        <li onclick="setcity('indore')">Indore</li>
+                    </ul>
+                </div>
+                <div id="know3">
+                    <ul>
+                        <li  onclick="setcity('hydrabad')">Hyderabad</li>
+                        <li  onclick="setcity('kolkata')">Kolkata</li>
+                        <li onclick="setcity('nagpur')">Nagpur</li>
+                    </ul>
+                </div>
+                <div id="know3">
+                    <ul>
+                        <li onclick="setcity('chennai')">Chennai</li>
+                        <li onclick="setcity('surat')">Surat</li>
+                        <li onclick="setcity('chandigarh')">Chandihgarh</li>
+                    </ul>
             </div>
             <div id="know3">
                 <ul>
@@ -561,6 +573,7 @@
         edit.style.marginTop="15px";
         edit.setAttribute("id","edit")
         toplocation.append(srcbox,srcbox2,edit)
+        toplocation.style.paddingLeft="10px"
         let br=document.createElement("hr")
         br.style="1px solid black"
         document.getElementById("estidata").append(toplocation,br)
@@ -608,6 +621,10 @@
 
         document.getElementById("appstore").addEventListener("click",()=>{
             window.location.href="https://porter.in/iphone-app";
+        })
+
+        document.getElementById("requestcall").addEventListener("click",()=>{
+            document.getElementById("callbackmessage").innerHTML="Callback request saved successfully"
         })
 
     })
@@ -726,16 +743,10 @@ let timerid;
    // console.log(data)
     console.log(data.stops[0].region,data.stops[0].countryCode,data.stops[1].region,data.stops[1].countryCode)
     let xx=data.distances[0];
-    
 
-//    document.getElementById("show").innerHTML=`the distance between ${src} & ${des} is ${xx} kilometers`
 
-   fetch(`http://localhost:3000/porterdata`)
-    .then((res1)=>res1.json())
-    .then((data1)=>{
-        // console.log(data1)
-        // console.log(xx)
-        let usrname1=document.getElementById("usrname").innerText
+    let data1=JSON.parse(localStorage.getItem("vechiledeatils"))
+    let usrname1=document.getElementById("usrname").innerText
         if(xx<=150)
         {
             let estimationdata=[];
@@ -798,9 +809,86 @@ let timerid;
             estimationdata.push(obj)
             
             localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+            window.location.href="./estimation.html"
             
         }
-    })
+
+
+//    document.getElementById("show").innerHTML=`the distance between ${src} & ${des} is ${xx} kilometers`
+
+
+//    fetch(`http://localhost:3000/porterdata`)
+//     .then((res1)=>res1.json())
+//     .then((data1)=>{
+//         // console.log(data1)
+//         // console.log(xx)
+//         let usrname1=document.getElementById("usrname").innerText
+//         if(xx<=150)
+//         {
+//             let estimationdata=[];
+
+//             data1.map((ele)=>{
+//                 // console.log(ele.capacity>=500)
+//                 estimationdata.push(ele)
+//             })
+
+//             let obj={
+//                 currdistace:xx,
+//                 src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+//                 des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+//                 name:usrname1
+//             }
+//             estimationdata.push(obj)
+//             localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+//             window.location.href="./estimation.html"
+//         }
+
+//         if(xx>=150 && xx<=200)
+//         {
+//             let estimationdata=[];
+
+//             data1.map((ele)=>{
+//                 if(ele.capacity>=500)
+//                 {
+//                     estimationdata.push(ele)
+//                 }             
+//             })
+//             let obj={
+//                 currdistace:xx,
+//                 src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+//                 des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+//                 name:usrname1
+//             }
+//             estimationdata.push(obj)
+
+//             localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+//             window.location.href="./estimation.html"
+//         }
+
+
+//         if(xx>200)
+//         {
+//             let estimationdata=[];
+
+//             data1.map((ele)=>{
+//                 if(ele.capacity>500)
+//                 {
+//                     estimationdata.push(ele)
+//                 }             
+//             })
+//             let obj={
+//                 currdistace:xx,
+//                 src:`${src} ${data.stops[0].region} ${data.stops[0].countryCode}`,
+//                 des:`${des} ${data.stops[1].region} ${data.stops[1].countryCode}`,
+//                 name:usrname1
+//             }
+//             estimationdata.push(obj)
+            
+//             localStorage.setItem("estimationdata",JSON.stringify(estimationdata))
+//             window.location.href="./estimation.html"
+            
+//         }
+//     })
 })
 
 
@@ -863,6 +951,8 @@ function appendtruckdata(data2)
         let py3=document.createElement("p")
         py3.innerText=`Size (LxBxH):${ele.size}`;
         boxy.append(py,hy,img,py2,py3)
+        boxy.style.paddingLeft="30px";
+        boxy.style.paddingTop="10px"
         document.getElementById("dataconatiner").append(boxy)
     })
 }
@@ -963,4 +1053,8 @@ function showitem1(data)
 //         item[i].style.display="grid"
 //     }
 // }
+function setcity(city){
+         localStorage.setItem("cityname",city)
+         window.location.href="/cityobj.html"
+    }
 </script>
