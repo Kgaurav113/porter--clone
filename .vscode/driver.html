@@ -27,7 +27,7 @@
             <div onclick="window.location.href='./enterprise.html'">FOR ENTERPRISE</div>
         </div>
         <div>
-            <P>Support</P>
+            <p  onclick="window.location.href='./support.html'">Support</p>
             <P class="track-btn">Track Order</P>
         </div>
     </div>
@@ -37,14 +37,15 @@
     <div class="driver-poster">
         <img src="https://d35ppnqksufxmo.cloudfront.net/frontend_website/c504ce6570402f768a2bfe217b49cb71.webp" alt="">
         <div class="entries">
-        <form>
+        <form id="submitform">
             <h3>Attach Vehicle Now</h3>
-            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Name" id="nam">
             <input type="number" placeholder="Mobile Number">
             <input type="text" placeholder="City">
             <input type="text" placeholder="Source">
-            <button type="submit">REGISTER</button>
+            <input type="submit" value="REGISTER" id="submit11">
         </form>
+        <div id="showthank"></div>
         <h2 class="h2">Start Earning Immediately</h3>
         <p>Download the partner app and register</p>
         <img src="https://www.freepnglogos.com/uploads/play-store-logo-png/play-store-logo-nisi-filters-australia-11.png" alt="">
@@ -80,7 +81,7 @@
                <h4>If you are a fleet owner and own multiple vehicles</h4>
                <p>
             Keeping track of your vehicle fleet and optimising their efficiency can be a huge challenge. Partner with Porter to boost your earnings and manage your vehicles easily.</p>
-            <button class="contact-us" >CONTACT US</button>
+            <button class="contact-us" onclick="window.location.href='./support.html'" >CONTACT US</button>
            </div>
        </div>
    </div>
@@ -325,41 +326,41 @@
         </div>
         
         
-        <div class="knowus" style="color: white;">
+        <div class="knowus" style="color: white; cursor: pointer;">
         <div id="know">
             <h3>We are here</h3>
             <ul>
-                <li><a href="">Mumbai</a></li>
-                <li><a href="">Ahmedabad</a></li>
-                <li><a href="">Lucknow</a></li>
+                <li onclick="setcity('mumbai')">Mumbai</li>
+                <li onclick="setcity('ahmedabad')">Ahmedabad</li>
+                <li onclick="setcity('lucknow')">Lucknow</li>
             </ul>
         </div>
         <div id="know2">
             <ul>
-                <li><a href="">Delhi NCR</a></li>
-                <li><a href="">Jaipur</a></li>
-                <li><a href="">Coimbatore</a></li>
+                <li onclick="setcity('delhi')">Delhi NCR</li>
+                <li  onclick="setcity('jaipur')">Jaipur</li>
+                <li onclick="setcity('coimbtore')">Coimbatore</li>
             </ul>
         </div>
         <div id="know3">
             <ul>
-                <li><a href="">Bangalore</a></li>
-                <li><a href="">Pune</a></li>
-                <li><a href="">Indore</a></li>
+                <li onclick="setcity('banglore')">Bangalore</li>
+                <li onclick="setcity('pune')">Pune</li>
+                <li onclick="setcity('indore')">Indore</li>
             </ul>
         </div>
         <div id="know3">
             <ul>
-                <li><a href="">Hyderabad</a></li>
-                <li><a href="">Kolkata</a></li>
-                <li><a href="">Nagpur</a></li>
+                <li  onclick="setcity('hydrabad')">Hyderabad</li>
+                <li  onclick="setcity('kolkata')">Kolkata</li>
+                <li onclick="setcity('nagpur')">Nagpur</li>
             </ul>
         </div>
         <div id="know3">
             <ul>
-                <li><a href="">Chennai</a></li>
-                <li><a href="">Surat</a></li>
-                <li><a href="">Chandihgarh</a></li>
+                <li onclick="setcity('chennai')">Chennai</li>
+                <li onclick="setcity('surat')">Surat</li>
+                <li onclick="setcity('chandigarh')">Chandihgarh</li>
             </ul>
         </div>
         
@@ -416,4 +417,45 @@
         tracker.style.display = "none"
     })
 
+    function setcity(city){
+         localStorage.setItem("cityname",city)
+         window.location.href="/cityobj.html"
+    }
+
+
+    document.getElementById("submitform").addEventListener("submit",()=>{
+        thankdiv(event)
+    })
+
+
+    let thankdiv=(event)=>{
+        event.preventDefault();
+
+        let name=document.getElementById("nam").value;
+        console.log(name)
+        let boxy11=document.createElement("div")
+        let p=document.createElement("p")
+        p.innerText="THANK YOU FOR REGISTRATION";
+        p.style.fontSize="22px";
+        p.style.fontWeight="medium"
+        let p2=document.createElement("p")
+        p2.innerText=name;
+        p2.style.fontSize="20px";
+        p2.style.fontWeight="bold"
+        let p3=document.createElement("p")
+        p3.innerText="We will get back to you shortly";
+        p3.style.fontSize="18px";
+        p2.style.fontWeight="light"
+        let butt=document.createElement("button")
+        butt.innerText="REGISTER MORE";
+        butt.setAttribute("id","insibut")
+        butt.addEventListener("click",()=>{
+            window.location.href="./driver.html"
+        })
+        boxy11.append(p,p2,p3,butt)
+        document.getElementById("showthank").append(boxy11)
+        document.getElementById("showthank").style.display="block";
+
+
+    }
 </script>
